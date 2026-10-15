@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demand Gen Study Guide</title>
+<meta name="description" content="A plain-English study guide: Forum Ventures, Limina, the Demand Generation Associate role line by line, demand gen from zero to pro, and interview questions.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #fbfaf7; --card: #fff; --ink: #1b1d22; --mute: #5d6470; --line: #e6e3dc; --blue: #2170f1; --blue-50: #eaf1fe; --navy: #0b1020; --green: #12805c; --green-50: #e3f5ee; --amber: #a15c07; --amber-50: #fdf3e2; --red: #c2410c; --violet: #6d28d9; --violet-50: #f1ebfd; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { background: var(--bg); color: var(--ink); font: 400 17px/1.75 "Lexend", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue); }
+  b, strong { font-weight: 600; }
+  .top { position: sticky; top: 0; z-index: 20; background: rgba(251,250,247,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .top .in { width: min(1240px, 100% - 32px); margin: 0 auto; height: 60px; display: flex; align-items: center; gap: 14px; }
+  .top b { font-weight: 700; }
+  .top .bar { flex: 1; height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; max-width: 260px; margin-left: auto; }
+  .top .bar i { display: block; height: 100%; width: 0; background: var(--blue); }
+  .menu { display: none; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 6px 12px; font: inherit; font-size: 15px; cursor: pointer; }
+  .layout { width: min(1240px, 100% - 32px); margin: 0 auto; display: grid; grid-template-columns: 250px 1fr; gap: 40px; }
+  nav.toc { position: sticky; top: 76px; align-self: start; max-height: calc(100vh - 92px); overflow-y: auto; padding: 18px 0 30px; font-size: 14.5px; }
+  nav.toc a { display: block; text-decoration: none; color: var(--mute); padding: 5px 10px; border-radius: 8px; line-height: 1.4; }
+  nav.toc a:hover { background: #fff; color: var(--ink); }
+  nav.toc a.on { background: var(--blue-50); color: var(--blue); font-weight: 600; }
+  nav.toc .grp { font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: #9aa0a8; text-transform: uppercase; margin: 16px 10px 4px; }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.toc { display: none; position: fixed; inset: 60px 0 0 0; max-height: none; background: var(--bg); z-index: 15; padding: 16px; }
+    nav.toc.open { display: block; }
+    .menu { display: inline-block; }
+  }
+  main { padding: 34px 0 80px; min-width: 0; }
+  .hero { background: var(--navy); color: #fff; border-radius: 24px; padding: 40px; }
+  .hero h1 { font-size: clamp(30px, 4.4vw, 46px); line-height: 1.15; font-weight: 600; letter-spacing: -.02em; }
+  .hero p { margin-top: 14px; color: #c8d0e6; max-width: 62ch; }
+  .hero .k { font: 700 12px "JetBrains Mono", monospace; letter-spacing: .12em; color: #8fb4ff; }
+  .plan { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .plan div { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 12px 14px; font-size: 15px; line-height: 1.5; }
+  .plan b { display: block; color: #8fb4ff; font-size: 13px; }
+  section { margin-top: 56px; }
+  h2 { font-size: clamp(26px, 3.2vw, 34px); line-height: 1.2; font-weight: 600; letter-spacing: -.015em; }
+  h2 .n { display: inline-block; font: 700 13px "JetBrains Mono", monospace; color: var(--blue); background: var(--blue-50); border-radius: 8px; padding: 3px 8px; margin-right: 10px; vertical-align: 6px; }
+  h3 { font-size: 21px; font-weight: 600; margin: 28px 0 8px; line-height: 1.35; }
+  h4 { font-size: 17px; font-weight: 600; margin: 18px 0 4px; }
+  p { margin-top: 10px; max-width: 72ch; }
+  ul, ol { margin: 10px 0 0 22px; max-width: 72ch; } li { margin-top: 6px; }
+  .lead { font-size: 19px; color: #333; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; margin-top: 16px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+  .grid2 .card, .grid3 .card { margin-top: 0; }
+  .simple { background: var(--green-50); border-left: 4px solid var(--green); border-radius: 0 14px 14px 0; padding: 14px 18px; margin-top: 14px; }
+  .simple::before { content: "IN SIMPLE WORDS"; display: block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: var(--green); margin-bottom: 4px; }
+  .eg { background: var(--blue-50); border-left: 4px solid var(--blue); border-radius: 0 14px 14px 0; padding: 14px 18px; margin-top: 14px; }
+  .eg::before { content: "EXAMPLE"; display: block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: var(--blue); margin-bottom: 4px; }
+  .say { background: var(--violet-50); border-left: 4px solid var(--violet); border-radius: 0 14px 14px 0; padding: 14px 18px; margin-top: 14px; }
+  .say::before { content: "SAY IT LIKE THIS"; display: block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: var(--violet); margin-bottom: 4px; }
+  .warn { background: var(--amber-50); border-left: 4px solid var(--amber); border-radius: 0 14px 14px 0; padding: 14px 18px; margin-top: 14px; }
+  .warn::before { content: "WATCH OUT"; display: block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: var(--amber); margin-bottom: 4px; }
+  .tag { display: inline-block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .06em; padding: 3px 8px; border-radius: 6px; background: var(--blue-50); color: var(--blue); text-transform: uppercase; }
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; margin-top: 12px; }
+  th { text-align: left; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--mute); padding: 10px; border-bottom: 2px solid var(--ink); }
+  td { padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.6; }
+  .scroll { overflow-x: auto; }
+  /* funnel */
+  .funnel { display: grid; gap: 6px; margin-top: 16px; }
+  .funnel div { margin: 0 auto; border-radius: 10px; color: #fff; padding: 10px 16px; text-align: center; font-size: 15px; line-height: 1.4; }
+  .funnel small { display: block; opacity: .85; font-size: 13px; }
+  /* JD blocks */
+  .jd { background: #fff; border: 1px solid var(--line); border-radius: 18px; margin-top: 16px; overflow: hidden; }
+  .jd .q { background: var(--navy); color: #fff; padding: 14px 20px; font-size: 16px; line-height: 1.55; }
+  .jd .q::before { content: "THE JOB POST SAYS"; display: block; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: #8fb4ff; margin-bottom: 4px; }
+  .jd .b { padding: 6px 20px 18px; display: grid; grid-template-columns: 150px 1fr; gap: 4px 16px; }
+  .jd .b > div:nth-child(odd) { font: 700 11px "JetBrains Mono", monospace; letter-spacing: .06em; color: var(--mute); text-transform: uppercase; padding-top: 14px; }
+  .jd .b > div:nth-child(even) { padding-top: 10px; }
+  @media (max-width: 700px) { .jd .b { grid-template-columns: 1fr; } .jd .b > div:nth-child(even) { padding-top: 0; } }
+  /* Q&A */
+  details { background: #fff; border: 1px solid var(--line); border-radius: 14px; margin-top: 10px; }
+  summary { cursor: pointer; padding: 14px 18px; font-weight: 600; list-style: none; display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 22px; color: var(--blue); line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details > div { padding: 0 18px 16px; }
+  .lvl { font: 700 10px "JetBrains Mono", monospace; letter-spacing: .08em; padding: 2px 7px; border-radius: 6px; margin-right: 8px; vertical-align: 2px; }
+  .l1 { background: var(--green-50); color: var(--green); } .l2 { background: var(--blue-50); color: var(--blue); } .l3 { background: var(--violet-50); color: var(--violet); } .l4 { background: #fde8e8; color: var(--red); }
+  /* glossary + cards */
+  .gsearch { width: 100%; font: inherit; padding: 12px 16px; border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-top: 12px; }
+  .gloss { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 10px; margin-top: 12px; }
+  .gloss div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; font-size: 15px; line-height: 1.6; }
+  .gloss b { display: block; font-size: 16px; } .gloss span.c { font: 700 10px "JetBrains Mono", monospace; color: var(--mute); letter-spacing: .08em; }
+  .fc { margin-top: 14px; display: grid; justify-items: center; gap: 12px; }
+  .flip { width: min(560px, 100%); height: 230px; perspective: 1200px; cursor: pointer; }
+  .flip .in { position: relative; width: 100%; height: 100%; transition: transform .5s; transform-style: preserve-3d; }
+  .flip.on .in { transform: rotateY(180deg); }
+  .flip .f, .flip .bk { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px; display: grid; place-items: center; text-align: center; padding: 26px; }
+  .flip .f { background: var(--navy); color: #fff; font-size: 28px; font-weight: 600; }
+  .flip .f small { display: block; font: 700 11px "JetBrains Mono", monospace; color: #8fb4ff; letter-spacing: .1em; margin-top: 10px; }
+  .flip .bk { background: #fff; border: 2px solid var(--blue); transform: rotateY(180deg); font-size: 17px; line-height: 1.6; }
+  .fcb { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .fcb button { font: inherit; font-size: 15px; border: 1px solid var(--line); background: #fff; border-radius: 500px; padding: 8px 16px; cursor: pointer; }
+  .fcb button.p { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .check li { list-style: none; margin-left: -22px; }
+  .check label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+  .check input { margin-top: 7px; accent-color: var(--blue); width: 17px; height: 17px; }
+  footer { margin-top: 60px; color: var(--mute); font-size: 14px; }
+  .mono { font-family: "JetBrains Mono", monospace; font-size: 14px; }
+  button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="top"><div class="in"><button class="menu" id="menu">☰ Sections</button><b>Demand Gen Study Guide</b><div class="bar"><i id="prog"></i></div></div></div>
+<div class="layout">
+<nav class="toc" id="toc">
+  <div class="grp">Start</div>
+  <a href="#start">How to use this guide</a>
+  <div class="grp">The players</div>
+  <a href="#vc">Startup money 101</a><a href="#forum">Forum Ventures</a><a href="#limina">Limina, from zero</a><a href="#tech">Limina's tech words</a><a href="#buyers">Who buys Limina</a><a href="#pitch">Explain Limina in 3 sizes</a>
+  <div class="grp">Marketing, zero to pro</div>
+  <a href="#funnel">The funnel</a><a href="#leads">Leads, MQLs, pipeline</a><a href="#metrics">The numbers</a><a href="#tools">Tools: CRM, HubSpot, UTMs</a><a href="#abm">ABM, deep dive</a><a href="#webinars">Webinars, deep dive</a><a href="#email">Email programs</a><a href="#paid">LinkedIn ads + paid</a><a href="#content">Content promotion</a><a href="#events">Events</a><a href="#cases">Case studies</a><a href="#enable">Sales enablement</a><a href="#data">Lists + data</a><a href="#report">Reporting</a>
+  <div class="grp">The job</div>
+  <a href="#jd">Job post, line by line</a><a href="#success">How success is measured</a><a href="#you">Your story</a>
+  <div class="grp">The interview</div>
+  <a href="#qa">Questions they may ask</a><a href="#ask">Questions you ask</a><a href="#money">Salary + logistics</a><a href="#after">After the call</a>
+  <div class="grp">Practice</div>
+  <a href="#gloss">Glossary</a><a href="#cards">Flashcards</a>
+</nav>
+<main>
+
+<header class="hero" id="start">
+  <div class="k">PLAIN-ENGLISH STUDY GUIDE · DEMAND GENERATION ASSOCIATE</div>
+  <h1>Everything you need, from zero to pro.</h1>
+  <p>The company, the investor, the product, every line of the job, the marketing words, and the questions. Read it top to bottom once, then use the flashcards to practise.</p>
+  <div class="plan">
+    <div><b>30 MIN</b>Read "The players" and "Explain Limina in 3 sizes".</div>
+    <div><b>30 MIN</b>Read "The funnel", "Leads, MQLs, pipeline" and "ABM".</div>
+    <div><b>30 MIN</b>Read "Job post, line by line".</div>
+    <div><b>20 MIN</b>Answer every question in "Questions they may ask" out loud.</div>
+    <div><b>10 MIN</b>Flashcards. Then breathe. 🙂</div>
+  </div>
+</header>
+
+<!-- ============ PLAYERS ============ -->
+<section id="vc">
+  <h2><span class="n">01</span>Startup money 101</h2>
+  <p class="lead">To understand who Ksenia is, you first need to know how startups get money.</p>
+  <div class="simple">Startups need money to grow before they make enough sales. Investors give them money in exchange for owning a small piece of the company. If the company grows, that piece becomes worth a lot.</div>
+  <h3>The words</h3>
+  <table><thead><tr><th>Word</th><th>Meaning</th></tr></thead><tbody>
+    <tr><td><b>Venture capital (VC)</b></td><td>Investors who put money into young, risky companies that could grow very big.</td></tr>
+    <tr><td><b>Portfolio</b></td><td>All the companies one investor has invested in. Limina is in Forum's portfolio.</td></tr>
+    <tr><td><b>Pre-seed, seed</b></td><td>The very first rounds of money, when the company is tiny.</td></tr>
+    <tr><td><b>Series A, B, C</b></td><td>Later, bigger rounds as the company grows.</td></tr>
+    <tr><td><b>Accelerator</b></td><td>A short program that helps new startups grow fast with money, mentors and training.</td></tr>
+    <tr><td><b>Venture studio</b></td><td>A team that builds new startups itself, from the idea up.</td></tr>
+    <tr><td><b>Platform team</b></td><td>People at the investor who help portfolio companies with things like hiring, marketing and sales. <b>Ksenia is on this kind of team.</b></td></tr>
+    <tr><td><b>Equity</b></td><td>A small ownership piece of the company. Limina's job offers "equity participation", so you could own a tiny piece too.</td></tr>
+  </tbody></table>
+</section>
+
+<section id="forum">
+  <h2><span class="n">02</span>Forum Ventures</h2>
+  <div class="simple">Forum Ventures is a startup investor. It invests early in B2B software companies and helps them grow, including hiring. Limina is one of its companies, so Forum's talent team runs Limina's hiring.</div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><span class="tag">What they are</span><ul><li>A <b>pre-seed fund</b> (invests very early)</li><li>An <b>accelerator</b></li><li>An <b>AI venture studio</b> (builds new AI startups)</li><li>Focused on <b>B2B</b> companies (selling to businesses)</li></ul></div>
+    <div class="card"><span class="tag">Size</span><ul><li><b>400+</b> portfolio companies</li><li>A platform team of <b>25+</b> people helping founders</li><li>Calls itself "founder-first"</li></ul></div>
+  </div>
+  <h3>Why the recruiter is from Forum</h3>
+  <p>Small startups often don't have their own recruiter yet. So the investor's talent team helps. Ksenia finds and screens people for Limina, then passes the best ones to Tyler.</p>
+  <h3>What Ksenia cares about today</h3>
+  <ul><li>Can you <b>explain your background</b> clearly?</li><li>Do you <b>understand the role</b> and want it for real reasons?</li><li>Do your <b>salary, timing and location</b> fit?</li><li>Will you be <b>easy to work with</b>, and would Tyler like you? (He already does.)</li></ul>
+  <div class="say">"I love that Limina is backed by Forum. It's a sign the company is serious about building a strong team early, and that's exactly the stage where I want to learn."</div>
+</section>
+
+<section id="limina">
+  <h2><span class="n">03</span>Limina, from zero</h2>
+  <h3>The problem, in a story</h3>
+  <p>A bank wants to use AI to read thousands of customer support chats and find what customers are unhappy about. But those chats are full of names, phone numbers, account numbers and addresses. If that private information goes into an AI tool, the bank could break privacy laws, leak data, or lose customer trust.</p>
+  <p>So the bank is stuck: <b>the data is valuable, but it's too risky to use.</b></p>
+  <h3>The solution</h3>
+  <p>Limina finds the private information and hides it or swaps it for safe fake values, <b>before</b> the data goes into AI. The meaning of the chat stays, but the private details are gone. Now the bank can use the data safely.</p>
+  <div class="eg">Before: "Hi, I'm <b>Sarah Chen</b>, my card ending <b>4421</b> was charged twice."<br>After (redacted): "Hi, I'm <b>[NAME_1]</b>, my card ending <b>[CARD_1]</b> was charged twice."<br>After (contextual replacement): "Hi, I'm <b>Maria Lopez</b>, my card ending <b>8807</b> was charged twice." (realistic, but fake)</div>
+  <h3>Key facts to remember</h3>
+  <div class="grid2">
+    <div class="card"><ul><li><b>Was called Private AI.</b> It grew into Limina.</li><li><b>Started in 2019</b> by privacy and machine-learning experts from the <b>University of Toronto</b>.</li><li><b>Based in Toronto</b> (Adelaide St W).</li><li>Their line: <b>"Every prompt is a data transaction, and Limina governs every one."</b></li></ul></div>
+    <div class="card"><ul><li>Works in <b>52 languages</b>.</li><li>Runs <b>inside the customer's own systems</b>, so data never leaves.</li><li>Helps with laws like <b>HIPAA, GDPR, CPRA, PCI-DSS</b>.</li><li><b>Customers:</b> Zurich Insurance, MUFG Bank, RBC, Intact Insurance, Boehringer Ingelheim, Deloitte.</li></ul></div>
+  </div>
+  <h3>Latest news</h3>
+  <p><b>September 14, 2026:</b> Limina launched <b>Contextual Replacement</b> in release 4.5. It replaces private details with realistic fake ones that fit the sentence, so the data stays useful for AI and analytics.</p>
+  <h3>Why now? (the "perfect market timing")</h3>
+  <p>Every company is rushing to use AI. Every AI project needs data. Most good data has private information inside. So every company building AI needs something like Limina. That's why the job post says <b>"Every organization building AI is grappling with how to govern sensitive data inside it."</b></p>
+</section>
+
+<section id="tech">
+  <h2><span class="n">04</span>Limina's tech words, made simple</h2>
+  <p class="lead">You don't need to be technical. You need to be able to explain these in one sentence.</p>
+  <div class="scroll"><table><thead><tr><th>Word</th><th>Simple meaning</th></tr></thead><tbody>
+    <tr><td><b>PII</b></td><td>Personally Identifiable Information. Anything that points to a person: name, email, phone, address, ID number.</td></tr>
+    <tr><td><b>PHI</b></td><td>Protected Health Information. Health details linked to a person: diagnosis, medicines, patient ID.</td></tr>
+    <tr><td><b>PCI</b></td><td>Payment card information: card numbers, expiry dates, CVV.</td></tr>
+    <tr><td><b>Sensitive data</b></td><td>Any data that could harm a person or company if leaked.</td></tr>
+    <tr><td><b>De-identification</b></td><td>Removing or changing details so data can't point to a person anymore.</td></tr>
+    <tr><td><b>Redaction</b></td><td>Blacking out or hiding a detail, like <span class="mono">[NAME_1]</span>.</td></tr>
+    <tr><td><b>Pseudonymization</b></td><td>Swapping a real detail for a fake but consistent one (Sarah becomes Maria everywhere).</td></tr>
+    <tr><td><b>Synthetic data</b></td><td>Fake data that looks and behaves like real data.</td></tr>
+    <tr><td><b>Contextual</b></td><td>Understanding meaning from the words around it. "Paris" can be a city or a person's name; context tells you which.</td></tr>
+    <tr><td><b>Entity detection (NER)</b></td><td>Software finding "entities" in text: names, dates, places, numbers.</td></tr>
+    <tr><td><b>AI / ML</b></td><td>Artificial intelligence / machine learning: software that learns patterns from data.</td></tr>
+    <tr><td><b>LLM</b></td><td>Large Language Model, like ChatGPT or Claude: AI that reads and writes text.</td></tr>
+    <tr><td><b>Prompt</b></td><td>What you type into an AI. If it contains private data, that's a risk.</td></tr>
+    <tr><td><b>Training data</b></td><td>The data used to teach an AI model.</td></tr>
+    <tr><td><b>RAG</b></td><td>Retrieval-Augmented Generation. The AI looks things up in a company's documents before answering. If those documents hold private data, it can leak into answers.</td></tr>
+    <tr><td><b>AI agent / agentic workflow</b></td><td>AI that takes actions on its own (reads emails, fills forms, updates systems). More power means more data risk.</td></tr>
+    <tr><td><b>Deploy in the customer's environment</b></td><td>The software runs on the customer's own servers or private cloud, so their data never goes to Limina.</td></tr>
+    <tr><td><b>Container</b></td><td>A neat package of software that can run anywhere, like a lunchbox for code.</td></tr>
+    <tr><td><b>API</b></td><td>A way for two pieces of software to talk. Developers send text to Limina's API and get clean text back.</td></tr>
+    <tr><td><b>Data governance</b></td><td>Rules and tools for who can use which data, and how.</td></tr>
+    <tr><td><b>Compliance / audit-ready</b></td><td>Following the law, and being able to prove it with records.</td></tr>
+    <tr><td><b>HIPAA</b></td><td>US law protecting health information.</td></tr>
+    <tr><td><b>GDPR</b></td><td>EU privacy law. Strict rules on personal data.</td></tr>
+    <tr><td><b>CPRA</b></td><td>California's privacy law.</td></tr>
+    <tr><td><b>PCI-DSS</b></td><td>Security rules for anyone handling card payments.</td></tr>
+    <tr><td><b>PIPEDA</b></td><td>Canada's main private-sector privacy law.</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="buyers">
+  <h2><span class="n">05</span>Who buys Limina (your audience)</h2>
+  <div class="simple">The job post says you'll turn "privacy, security, and data leaders" into prospects. These are the people you market to.</div>
+  <div class="scroll"><table><thead><tr><th>Person</th><th>What they worry about</th><th>Message that lands</th></tr></thead><tbody>
+    <tr><td><b>Chief Privacy Officer / Data Protection Officer</b></td><td>Breaking privacy laws, fines, audits</td><td>"Audit-ready compliance for HIPAA, GDPR and more."</td></tr>
+    <tr><td><b>CISO (security leader)</b></td><td>Data leaks, data leaving the company</td><td>"Runs inside your environment. No third-party data processing."</td></tr>
+    <tr><td><b>Chief Data Officer / Head of Data</b></td><td>Valuable data locked away and unused</td><td>"Turn sensitive data into usable data."</td></tr>
+    <tr><td><b>Head of AI / ML</b></td><td>Getting AI projects approved and shipped</td><td>"Keep PII out of your RAG pipelines and agents without slowing AI down."</td></tr>
+    <tr><td><b>Compliance / legal</b></td><td>Proof that rules were followed</td><td>"Audit trails and compliance outputs, built in."</td></tr>
+  </tbody></table></div>
+  <h3>Industries</h3>
+  <p>Banks and financial services, insurance, healthcare and life sciences, technology, and contact centers. All are regulated and full of private data.</p>
+</section>
+
+<section id="pitch">
+  <h2><span class="n">06</span>Explain Limina in 3 sizes</h2>
+  <div class="say"><b>1 line:</b> Limina finds and protects private information in a company's data, so they can use it safely in AI.</div>
+  <div class="say"><b>3 lines:</b> Every company wants to use its data in AI, but that data is full of names, health details and card numbers. Limina finds that sensitive information in 52 languages and redacts it or replaces it with realistic fake values. It runs inside the customer's own environment, so banks, insurers and health systems can use AI without risking privacy or compliance.</div>
+  <div class="say"><b>As a marketer:</b> Limina sells to privacy, security and data leaders at regulated companies. Their pain is "AI is moving fast, compliance keeps saying no." Limina's promise is "say yes to AI, safely." My job would be to get those leaders to raise their hand: webinars, content, ads and ABM.</div>
+</section>
+
+<!-- ============ MARKETING ============ -->
+<section id="funnel">
+  <h2><span class="n">07</span>The funnel</h2>
+  <div class="simple">The funnel is the journey from "never heard of us" to "paying customer". Lots of people at the top, fewer at each step. Demand gen fills the top and helps people move down.</div>
+  <div class="funnel">
+    <div style="width:100%;background:#2170f1">Awareness (TOFU) <small>They learn Limina exists: ads, posts, webinars</small></div>
+    <div style="width:86%;background:#3d82f4">Interest <small>They read, download, register: now a lead</small></div>
+    <div style="width:72%;background:#5a95f6">Consideration (MOFU) <small>They engage more: MQL</small></div>
+    <div style="width:58%;background:#0f4aa8">Sales conversation <small>MDR books a call: SQL / meeting</small></div>
+    <div style="width:44%;background:#0b3375">Opportunity (BOFU) <small>A real deal in progress: pipeline</small></div>
+    <div style="width:30%;background:#0b1020">Customer <small>Closed won</small></div>
+  </div>
+  <h3>TOFU, MOFU, BOFU</h3>
+  <ul><li><b>TOFU</b> (top of funnel): get noticed. Ads, LinkedIn posts, blogs.</li><li><b>MOFU</b> (middle): teach and build trust. Webinars, guides, case studies.</li><li><b>BOFU</b> (bottom): help them decide. Demos, ROI, customer proof.</li></ul>
+  <h3>Demand gen vs lead gen</h3>
+  <p><b>Lead gen</b> collects contact details (forms, downloads). <b>Demand gen</b> is bigger: it makes the right people <b>want</b> the product, then captures them. A great webinar is demand gen. The registration form is lead gen.</p>
+</section>
+
+<section id="leads">
+  <h2><span class="n">08</span>Leads, MQLs and pipeline</h2>
+  <div class="scroll"><table><thead><tr><th>Stage</th><th>Meaning</th><th>Limina example</th></tr></thead><tbody>
+    <tr><td><b>Contact / lead</b></td><td>Someone we have details for</td><td>A privacy manager registers for a webinar</td></tr>
+    <tr><td><b>MQL</b> (Marketing Qualified Lead)</td><td>A lead who fits our buyer and shows enough interest</td><td>A bank's privacy director attends the webinar and downloads the HIPAA guide</td></tr>
+    <tr><td><b>SAL</b> (Sales Accepted Lead)</td><td>Sales agrees the MQL is worth contacting</td><td>The MDR accepts and reaches out</td></tr>
+    <tr><td><b>SQL</b> (Sales Qualified Lead)</td><td>Sales confirms a real need</td><td>The MDR books a discovery call</td></tr>
+    <tr><td><b>Opportunity</b></td><td>An active deal with a value</td><td>A $120K deal in the CRM</td></tr>
+    <tr><td><b>Pipeline</b></td><td>The total value of all open opportunities</td><td>"Marketing sourced $1.2M of pipeline this quarter"</td></tr>
+    <tr><td><b>Closed won / lost</b></td><td>The deal is signed, or not</td><td>Revenue!</td></tr>
+  </tbody></table></div>
+  <h3>Sourced vs influenced pipeline</h3>
+  <ul><li><b>Sourced:</b> the deal <b>started</b> because of marketing (first came in from a webinar).</li><li><b>Influenced:</b> marketing <b>touched</b> the deal along the way (an existing prospect attended a webinar).</li></ul>
+  <h3>Lead scoring</h3>
+  <p>Points that decide when a lead becomes an MQL. Two kinds:</p>
+  <ul><li><b>Fit</b> (who they are): right title, industry, company size. Example: Privacy Director at a bank = +30.</li><li><b>Engagement</b> (what they do): attended a webinar +20, visited the pricing page +15, opened an email +2.</li></ul>
+  <p>At 60 points, they become an MQL and go to the MDR.</p>
+  <h3>The people</h3>
+  <ul><li><b>MDR / SDR / BDR:</b> the person who contacts leads and books meetings. Limina has an <b>MDR</b> you'll work closely with.</li><li><b>AE</b> (Account Executive): runs the deal and closes it.</li><li><b>CS</b> (Customer Success): keeps customers happy after they buy. Helps with case studies.</li></ul>
+</section>
+
+<section id="metrics">
+  <h2><span class="n">09</span>The numbers (with tiny maths)</h2>
+  <div class="scroll"><table><thead><tr><th>Metric</th><th>Formula</th><th>Example</th></tr></thead><tbody>
+    <tr><td><b>Conversion rate</b></td><td>people who took the action ÷ people who could</td><td>500 page visits, 100 registrations = 20%</td></tr>
+    <tr><td><b>CTR</b> (click-through rate)</td><td>clicks ÷ impressions</td><td>10,000 ad views, 60 clicks = 0.6%</td></tr>
+    <tr><td><b>CPC</b> (cost per click)</td><td>spend ÷ clicks</td><td>$600 ÷ 60 = $10</td></tr>
+    <tr><td><b>CPM</b></td><td>cost per 1,000 impressions</td><td>$600 for 20,000 views = $30</td></tr>
+    <tr><td><b>CPL</b> (cost per lead)</td><td>spend ÷ leads</td><td>$3,000 ÷ 40 leads = $75</td></tr>
+    <tr><td><b>Cost per MQL</b></td><td>spend ÷ MQLs</td><td>$3,000 ÷ 12 MQLs = $250</td></tr>
+    <tr><td><b>Show rate</b></td><td>attendees ÷ registrants</td><td>120 attend ÷ 300 registered = 40%</td></tr>
+    <tr><td><b>Open rate / click rate</b></td><td>opens ÷ delivered, clicks ÷ delivered</td><td>Email to 2,000: 500 opens (25%), 60 clicks (3%)</td></tr>
+    <tr><td><b>Pipeline ROI</b></td><td>pipeline ÷ spend</td><td>$300K pipeline ÷ $15K spend = 20x</td></tr>
+    <tr><td><b>CAC</b></td><td>total sales + marketing cost ÷ new customers</td><td>$200K ÷ 4 customers = $50K</td></tr>
+  </tbody></table></div>
+  <div class="warn">Benchmarks change a lot by industry, so never quote a number as a fact. Say: "I'd start from our own baseline, then improve it."</div>
+  <h3>Attribution</h3>
+  <p>Deciding which marketing gets credit for a deal.</p>
+  <ul><li><b>First touch:</b> credit to the first thing they did (the LinkedIn ad).</li><li><b>Last touch:</b> credit to the last thing before converting (the demo request email).</li><li><b>Multi-touch:</b> credit shared across everything. Fairer, but more complex.</li><li><b>Self-reported:</b> the form asks "How did you hear about us?" Simple and often very useful.</li></ul>
+</section>
+
+<section id="tools">
+  <h2><span class="n">10</span>Tools: CRM, HubSpot, UTMs</h2>
+  <h3>CRM</h3>
+  <p>Customer Relationship Management: the database of every contact, company and deal. Examples: HubSpot, Salesforce.</p>
+  <h3>Marketing automation (MAP)</h3>
+  <p>Software that sends emails, runs forms and landing pages, scores leads and moves them through stages automatically. <b>HubSpot</b> does both CRM and automation. The job post names HubSpot.</p>
+  <h3>HubSpot words to know</h3>
+  <ul>
+    <li><b>Contact, company, deal</b>: the three main records.</li>
+    <li><b>Properties</b>: fields on a record (job title, industry, lead source).</li>
+    <li><b>Lists</b>: active lists update by themselves; static lists don't change.</li>
+    <li><b>Workflows</b>: automations. "If someone registers, send confirmation, add to list, notify MDR."</li>
+    <li><b>Lifecycle stage</b>: subscriber, lead, MQL, SQL, opportunity, customer.</li>
+    <li><b>Forms and landing pages</b>: where people sign up.</li>
+    <li><b>Sequences</b>: one-to-one sales email series (used by the MDR).</li>
+  </ul>
+  <h3>UTMs (tracking links)</h3>
+  <div class="simple">Little tags added to a link so you know where a visitor came from.</div>
+  <div class="eg mono" style="font-family:'JetBrains Mono',monospace;font-size:13px;word-break:break-all">getlimina.ai/webinar?utm_source=linkedin&amp;utm_medium=paid-social&amp;utm_campaign=2026-11-ai-governance-webinar&amp;utm_content=ad-a</div>
+  <ul><li><b>source</b>: where (linkedin, newsletter)</li><li><b>medium</b>: what kind (paid-social, email)</li><li><b>campaign</b>: which campaign</li><li><b>content</b>: which ad or link version</li></ul>
+  <p>The form captures these into hidden fields, so HubSpot knows exactly which ad brought each lead.</p>
+  <h3>Other tools you may meet</h3>
+  <p><b>LinkedIn Campaign Manager</b> (ads), <b>Google Analytics</b> (website traffic), <b>ZoomInfo / Apollo</b> (contact data), <b>Zoom / ON24 / Goldcast</b> (webinars), <b>G2</b> (reviews), <b>6sense / Bombora</b> (intent data), <b>Canva / Figma</b> (design).</p>
+</section>
+
+<section id="abm">
+  <h2><span class="n">11</span>ABM, deep dive</h2>
+  <div class="simple">ABM (Account-Based Marketing) flips the funnel. Instead of fishing with a big net for anyone, you pick a short list of companies you really want, then market to the people at those companies, in a personal way.</div>
+  <h3>Big net vs spear</h3>
+  <div class="grid2"><div class="card"><span class="tag">Normal demand gen</span><p>Run an ad for all privacy leaders. See who signs up. Hope the right companies come.</p></div><div class="card"><span class="tag">ABM</span><p>Pick 25 banks and insurers. Find the 3 to 5 key people at each. Send them tailored content, ads, emails and even a gift. Sales and marketing work together on every account.</p></div></div>
+  <h3>The 3 tiers</h3>
+  <table><thead><tr><th>Tier</th><th>How many accounts</th><th>How personal</th></tr></thead><tbody>
+    <tr><td><b>1:1</b> (strategic)</td><td>5 to 10</td><td>Fully custom. Custom page, gift, exec outreach. (Your box for Tyler was a 1:1 play!)</td></tr>
+    <tr><td><b>1:few</b> (cluster)</td><td>10 to 50, grouped</td><td>Custom per group, like "Canadian banks" or "US health insurers".</td></tr>
+    <tr><td><b>1:many</b> (programmatic)</td><td>Hundreds</td><td>Light personal touches, mostly targeted ads.</td></tr>
+  </tbody></table>
+  <h3>ABM, step by step</h3>
+  <ol>
+    <li><b>Define the ICP</b> (Ideal Customer Profile): industry, size, region, signals. Example: banks and insurers with 1,000+ employees in North America, building AI.</li>
+    <li><b>Pick the accounts</b> with sales. Use fit plus signals (hiring AI roles, a recent data breach in the news, new privacy rules).</li>
+    <li><b>Map the buying committee</b>: privacy, security, data, AI and legal leaders at each account.</li>
+    <li><b>Research and message</b>: what does each account care about? Write tailored messages.</li>
+    <li><b>Run the plays</b>: LinkedIn ads targeted to only those companies, personal emails from the MDR, invites to an exclusive roundtable, a custom one-pager, a gift.</li>
+    <li><b>Coordinate with the MDR</b>: marketing warms them up; the MDR follows up at the right moment.</li>
+    <li><b>Measure</b>: are the right accounts engaging, and is pipeline coming from them?</li>
+  </ol>
+  <h3>ABM metrics</h3>
+  <ul><li><b>Account coverage</b>: do we have contacts for the key people at each account?</li><li><b>Account engagement</b>: how many target accounts visited, clicked, attended?</li><li><b>Meetings booked</b> with target accounts.</li><li><b>Pipeline and win rate</b> from target accounts.</li></ul>
+  <h3>Intent data</h3>
+  <p>Signals that a company is researching a topic right now (for example, many people at a bank reading about "PII redaction"). Tools like 6sense or Bombora sell this. It tells you <b>who to focus on this month</b>.</p>
+  <div class="say">"For the ABM pilot, I'd start small: 25 accounts with the MDR, mapped to 3 to 5 people each, one tailored offer per cluster, and weekly check-ins on engagement and meetings. Prove it on a few accounts, then scale."</div>
+</section>
+
+<section id="webinars">
+  <h2><span class="n">12</span>Webinars, deep dive</h2>
+  <div class="simple">A webinar is a live online talk. For B2B, it's one of the best ways to get the right people to spend 45 minutes with you, and to collect leads.</div>
+  <h3>The 6 parts the job post lists</h3>
+  <table><thead><tr><th>Part</th><th>What you do</th></tr></thead><tbody>
+    <tr><td><b>Topic</b></td><td>Pick a real pain for the buyer: "How banks keep PII out of RAG pipelines". Check sales calls and search trends.</td></tr>
+    <tr><td><b>Speakers</b></td><td>An internal expert plus ideally a customer or partner. Brief them, collect bios and photos, run a rehearsal.</td></tr>
+    <tr><td><b>Promotion</b></td><td>3 to 4 weeks of emails, LinkedIn posts, ads, partner shares, MDR personal invites, a website banner.</td></tr>
+    <tr><td><b>Registration</b></td><td>Landing page and form, confirmation email, calendar file, reminders (1 week, 1 day, 1 hour).</td></tr>
+    <tr><td><b>Live session</b></td><td>Run-of-show, tech check, polls, Q&amp;A, a clear next step (demo, guide).</td></tr>
+    <tr><td><b>Follow-up</b></td><td>Different emails for attendees and no-shows, recording, MQLs to the MDR within 24 hours, results report.</td></tr>
+  </tbody></table>
+  <h3>Webinar metrics</h3>
+  <ul><li>Registrations (and how many from target accounts)</li><li>Show rate (attendees ÷ registrants)</li><li>Engagement (questions, polls, time watched)</li><li>MQLs, meetings and pipeline after the event</li><li>Recording views later</li></ul>
+  <h3>Tips that raise attendance</h3>
+  <ul><li>Send a calendar invite right after registering.</li><li>Remind 1 day and 1 hour before.</li><li>Promise the recording, so busy people still register.</li><li>The MDR personally invites top accounts.</li><li>Tuesday to Thursday, late morning, tend to work well for business audiences.</li></ul>
+  <div class="say">"I built a full webinar system for Limina: topic, landing page with a working form and UTM capture, the email sequence, a run-of-show and a follow-up flow split by attendees and no-shows."</div>
+</section>
+
+<section id="email">
+  <h2><span class="n">13</span>Email programs</h2>
+  <ul>
+    <li><b>Newsletter</b>: regular update to the whole database.</li>
+    <li><b>Promotional email</b>: one campaign, like a webinar invite.</li>
+    <li><b>Nurture</b>: a series that teaches over weeks, slowly building trust.</li>
+    <li><b>Segmentation</b>: different emails for different groups (banks vs health).</li>
+    <li><b>A/B test</b>: send two versions to small groups, then send the winner to the rest.</li>
+    <li><b>Deliverability</b>: making sure emails reach the inbox, not spam. Keep lists clean and don't buy random lists.</li>
+    <li><b>CASL</b>: Canada's anti-spam law. You need permission (consent) to email people, and an easy unsubscribe.</li>
+  </ul>
+  <h3>A good B2B email</h3>
+  <ol><li>A short, clear subject line</li><li>One idea</li><li>Why it matters to them</li><li>One call to action (one button)</li><li>Easy to read on a phone</li></ol>
+</section>
+
+<section id="paid">
+  <h2><span class="n">14</span>LinkedIn ads and paid media</h2>
+  <div class="simple">LinkedIn is the best place to reach business buyers by their job title, company and industry. It costs more than other networks, so targeting and creative must be sharp.</div>
+  <h3>Targeting</h3>
+  <ul><li><b>Job titles or functions</b>: Privacy, Security, Data, Legal.</li><li><b>Seniority</b>: Director, VP, C-level.</li><li><b>Company lists</b>: upload target accounts (great for ABM).</li><li><b>Industry and company size.</b></li><li><b>Retargeting</b>: people who visited the website or watched a video.</li><li><b>Matched audiences</b>: upload a contact list.</li></ul>
+  <h3>Ad formats</h3>
+  <p>Single image, carousel, video, document ads (a PDF people can read in the feed), conversation ads (inbox messages), thought leader ads (boosting an exec's post).</p>
+  <h3>Lead Gen Forms</h3>
+  <p>The form opens inside LinkedIn, pre-filled. Easier for people, so more leads, but sometimes lower quality. Sync them to HubSpot.</p>
+  <h3>Your part in paid</h3>
+  <ul><li><b>Audience building</b>: the targeting above.</li><li><b>Ad copy</b>: headline, intro text, call to action.</li><li><b>Performance tracking</b>: CTR, CPC, CPL, MQLs, cost per meeting. Pause what's weak, scale what works.</li><li><b>Content syndication</b>: paying a partner to share your guide with their audience, and you get the leads.</li></ul>
+</section>
+
+<section id="content">
+  <h2><span class="n">15</span>Content promotion: owned, earned, paid</h2>
+  <table><thead><tr><th>Type</th><th>Meaning</th><th>Examples</th></tr></thead><tbody>
+    <tr><td><b>Owned</b></td><td>Channels Limina controls</td><td>Website, blog, email list, company LinkedIn page</td></tr>
+    <tr><td><b>Earned</b></td><td>Others share it for free</td><td>Press, partner shares, people reposting, podcasts</td></tr>
+    <tr><td><b>Paid</b></td><td>You pay for reach</td><td>LinkedIn ads, content syndication, sponsored newsletters</td></tr>
+  </tbody></table>
+  <h3>Partner co-marketing</h3>
+  <p>Working with another company (a cloud provider, a consulting firm) to share audiences: joint webinars, guest blogs, shared events.</p>
+  <h3>Repurposing</h3>
+  <p>One big piece becomes many small ones. A webinar becomes 5 clips, 3 LinkedIn posts, a blog, an email and a one-pager for sales.</p>
+</section>
+
+<section id="events">
+  <h2><span class="n">16</span>Events</h2>
+  <div class="simple">The job says "so prospects know we'll be there and book time with us before we arrive." That means: don't just show up at a conference. Fill the calendar before it starts.</div>
+  <ul><li><b>Before</b>: get the attendee list if the event shares one, find target accounts, email and LinkedIn "we'll be at booth 12, want to meet?", MDR books meetings, post on social.</li><li><b>During</b>: post photos, scan badges, note conversations.</li><li><b>After</b>: follow up within 48 hours, add leads to HubSpot, report meetings and pipeline.</li></ul>
+  <p>Examples of events in this space: privacy and security conferences like IAPP gatherings, RSA Conference, and industry events for banking, insurance and health data leaders.</p>
+</section>
+
+<section id="cases">
+  <h2><span class="n">17</span>Case studies</h2>
+  <div class="simple">A case study is a customer's story: their problem, how Limina helped, and the result. It's the strongest proof for new buyers. Your job is the logistics, from first ask to final sign-off.</div>
+  <ol><li><b>Source</b>: ask Customer Success and Sales who's happy and getting results.</li><li><b>Ask</b>: make it easy and show what they get (exposure, a backlink, a nice story).</li><li><b>Schedule</b>: book a 30-minute interview, send questions ahead.</li><li><b>Interview and write</b> (or brief the writer).</li><li><b>Approvals</b>: big companies need legal and PR sign-off. This often takes the longest. Track it.</li><li><b>Publish and use</b>: web page, PDF, sales deck slide, LinkedIn post, email.</li></ol>
+  <div class="warn">Regulated companies (banks, insurers) often can't be named. Plan for anonymous versions: "A top-10 North American bank".</div>
+</section>
+
+<section id="enable">
+  <h2><span class="n">18</span>Sales enablement (rep assets)</h2>
+  <p>"Rep" means a sales rep. Rep assets are materials salespeople use in follow-ups:</p>
+  <ul><li>One-pagers per industry (banking, health, insurance)</li><li>Follow-up email templates</li><li>Case study summaries</li><li>Battlecards: how Limina compares with other options</li><li>Objection handling: "We built our own redaction" → answer</li><li>Slides and short videos</li></ul>
+  <p>"Adapting messaging for new industries" means taking the core message and rewriting it with that industry's words, risks and laws.</p>
+</section>
+
+<section id="data">
+  <h2><span class="n">19</span>Lists and data</h2>
+  <ul><li><b>Target list</b>: the right people at the right companies.</li><li><b>Import</b>: bringing contacts into HubSpot from events, partners or tools.</li><li><b>Cleaning</b>: removing duplicates, fixing job titles, filling missing industry, removing bounced emails.</li><li><b>Segmentation</b>: tagging people so you can target them (persona, industry, region, stage).</li><li><b>Enrichment</b>: adding missing details with a tool like ZoomInfo or Apollo.</li><li><b>Consent</b>: keep track of who agreed to receive emails (CASL in Canada, GDPR in Europe).</li></ul>
+  <div class="say">"I see list cleanup, form testing and UTM tracking as part of the craft. Bad data breaks every campaign after it."</div>
+</section>
+
+<section id="report">
+  <h2><span class="n">20</span>Reporting</h2>
+  <p>The job post: "what's driving new leads, MQLs, and pipeline, and what isn't. Recommend where to shift effort."</p>
+  <h3>A simple weekly report</h3>
+  <ol><li><b>Numbers</b>: leads, MQLs, meetings, pipeline. This week vs last week vs target.</li><li><b>By channel</b>: webinar, email, LinkedIn, events, partners.</li><li><b>What worked, what didn't</b>, and why.</li><li><b>Recommendation</b>: "Move $2K from display to LinkedIn document ads; CPL is 40% lower there."</li></ol>
+  <div class="say">"Numbers first, then the story: what moved, why, and what we'll do next."</div>
+</section>
+
+<!-- ============ THE JOB ============ -->
+<section id="jd">
+  <h2><span class="n">21</span>The job post, line by line</h2>
+  <p class="lead">Every line, what it means, what you'd actually do, and your proof.</p>
+
+  <div class="jd"><div class="q">You'll join Limina's marketing team, reporting to the VP of Marketing.</div><div class="b"><div>Meaning</div><div>Your boss is Tyler Munro. The team is small.</div><div>So what</div><div>You'll learn directly from the VP and do a bit of everything.</div></div></div>
+  <div class="jd"><div class="q">Your job is to bring more of the right people into our funnel.</div><div class="b"><div>Meaning</div><div>Find and attract the <b>right</b> buyers (privacy, security, data leaders at regulated companies), not just anyone.</div><div>Key word</div><div>"Right." Quality over quantity.</div></div></div>
+  <div class="jd"><div class="q">Our marketing function is young, so you'll get hands-on experience across every part of demand generation and see your work show up directly in the pipeline.</div><div class="b"><div>Meaning</div><div>Few processes exist yet. You'll build things, not just run them.</div><div>Say</div><div>"I like building from scratch. I did that with the Limina page."</div></div></div>
+  <div class="jd"><div class="q">You'll work closely with our Market Development Representative, who turns the engagement you create into conversations with sales.</div><div class="b"><div>Meaning</div><div>You create interest (MQLs). The MDR calls and books meetings. You're a duo.</div><div>Do</div><div>Agree with the MDR on what an MQL is, how fast they follow up, and share feedback weekly.</div></div></div>
+  <div class="jd"><div class="q">Execute integrated campaigns from brief to launch. Build emails, landing pages, and forms, and coordinate timelines across the team.</div><div class="b"><div>Meaning</div><div>"Integrated" means one theme across many channels (email + LinkedIn + webinar + ads). You take it from the plan to live.</div><div>Do</div><div>Write the brief, build in HubSpot, test forms and links, keep a timeline, launch on time.</div><div>Your proof</div><div>Integrated campaign + live landing page + form on the Limina page.</div></div></div>
+  <div class="jd"><div class="q">Run our webinar program end to end: topics, speakers, promotion, registration, the live session, and follow-up.</div><div class="b"><div>Meaning</div><div>You own webinars completely. See section 12.</div><div>Your proof</div><div>Webinar program and the live webinar landing page you built.</div></div></div>
+  <div class="jd"><div class="q">Promote content across owned, earned, and paid channels, including email, LinkedIn, content syndication, and partner co-marketing.</div><div class="b"><div>Meaning</div><div>When Limina makes a guide or blog, you get it in front of the right people everywhere. See section 15.</div><div>Do</div><div>Promotion checklist per asset: email, 3 LinkedIn posts, paid boost, partner share, MDR snippet.</div></div></div>
+  <div class="jd"><div class="q">Support paid media with audience building, ad copy, and performance tracking, working with any agencies or tools we use.</div><div class="b"><div>Meaning</div><div>Help run ads: who sees them, what they say, and how they perform. See section 14.</div><div>Your proof</div><div>Four LinkedIn ad concepts with audiences and specs.</div></div></div>
+  <div class="jd"><div class="q">Grow our database with the right buyers. Build and clean target lists, manage imports, and keep segmentation accurate.</div><div class="b"><div>Meaning</div><div>More good contacts in HubSpot, organized properly. See section 19.</div><div>Do</div><div>Monthly cleanup, import rules, persona and industry tags.</div></div></div>
+  <div class="jd"><div class="q">Coordinate event promotion, so prospects know we'll be there and book time with us before we arrive.</div><div class="b"><div>Meaning</div><div>Fill the meeting calendar before a conference. See section 16.</div></div></div>
+  <div class="jd"><div class="q">Own the logistics of our case study program. You'll source willing customers through Customer Success and Sales, schedule interviews, manage approvals, and keep the customer experience smooth from first ask to final sign-off.</div><div class="b"><div>Meaning</div><div>You're the project manager of customer stories. See section 17.</div><div>Key word</div><div>"Smooth." Customers are busy and doing you a favour. Make it easy.</div></div></div>
+  <div class="jd"><div class="q">Turn campaign content and case studies into assets reps can use in follow-up, adapting our existing messaging for new industries and use cases.</div><div class="b"><div>Meaning</div><div>Make sales materials from marketing content. See section 18.</div><div>Your proof</div><div>Rep assets on the Limina page.</div></div></div>
+  <div class="jd"><div class="q">Build target lists and campaign materials for our ABM pilot, in partnership with the MDR.</div><div class="b"><div>Meaning</div><div>"Pilot" means a first small test. You build the account list and the content. See section 11.</div><div>Your proof</div><div>The ABM pilot plan, plus the box you sent Tyler (a real 1:1 ABM play).</div></div></div>
+  <div class="jd"><div class="q">Report on campaign performance: what's driving new leads, MQLs, and pipeline, and what isn't. Recommend where to shift effort.</div><div class="b"><div>Meaning</div><div>Show the numbers and say what to do next. See section 20.</div></div></div>
+
+  <h3>What they're looking for, decoded</h3>
+  <div class="scroll"><table><thead><tr><th>They say</th><th>They mean</th><th>Your proof</th></tr></thead><tbody>
+    <tr><td>0 to 2 years; internships and campaign work count</td><td>Junior is fine. Show real work.</td><td>Missive, Bsquaree, Rewynd, freelance, the Limina page</td></tr>
+    <tr><td>Execution: you ship</td><td>Finish things on deadline, details right</td><td>You built a full campaign before applying</td></tr>
+    <tr><td>Analytical mindset</td><td>Look at results, ask why, adjust</td><td>Reviewed outreach results to improve response rates; business analysis postgrad</td></tr>
+    <tr><td>Writing for technical and compliance audiences</td><td>Clear, careful copy for serious buyers</td><td>SEO writing, ghostwriting, the Limina emails and page</td></tr>
+    <tr><td>HubSpot, LinkedIn ads a plus</td><td>Nice to have, not required</td><td>HubSpot Marketing Hub certified; LinkedIn ad concepts</td></tr>
+    <tr><td>Relationship skills</td><td>Customers and teammates enjoy working with you</td><td>Stakeholder communication at Bsquaree; client work</td></tr>
+    <tr><td>Technical curiosity</td><td>Willing to learn privacy, AI and compliance</td><td>You studied Limina's guides to build the page (and this guide!)</td></tr>
+    <tr><td>Low ego, high ownership</td><td>No task is too small</td><td>"List cleanup and UTM tracking are part of the craft."</td></tr>
+  </tbody></table></div>
+  <h3>Growth path</h3>
+  <p>The role can grow into <b>senior demand gen, ABM, marketing operations or campaign leadership</b>. Have a light answer ready for "Which interests you?" For example: "I'm drawn to ABM and campaign leadership, but I want to learn all of it first."</p>
+</section>
+
+<section id="success">
+  <h2><span class="n">22</span>How success is measured</h2>
+  <table><thead><tr><th>Metric</th><th>Plain meaning</th><th>How you'd move it</th></tr></thead><tbody>
+    <tr><td>Net-new leads from target segments</td><td>New contacts from the right groups</td><td>Webinars, gated guides, partner co-marketing, events</td></tr>
+    <tr><td>MQLs from campaigns</td><td>Leads good enough for the MDR</td><td>Better targeting, clear scoring, nurture emails</td></tr>
+    <tr><td>Webinar registration and attendance</td><td>People signing up and showing up</td><td>Strong topics, MDR invites, reminders, calendar files</td></tr>
+    <tr><td>Conversion rates and cost per lead</td><td>Efficiency</td><td>A/B tests on pages and ads, cut weak channels</td></tr>
+    <tr><td>Pipeline sourced and influenced</td><td>Deals marketing started or helped</td><td>Fast MQL hand-off, ABM, clean attribution</td></tr>
+    <tr><td>Case studies per quarter</td><td>Customer stories finished</td><td>A tracker, easy asks, approval follow-ups</td></tr>
+    <tr><td>Rep-ready assets shipped and used</td><td>Sales actually uses your materials</td><td>Ask reps what they need, track usage</td></tr>
+  </tbody></table>
+</section>
+
+<section id="you">
+  <h2><span class="n">23</span>Your story</h2>
+  <h3>60-second intro</h3>
+  <div class="say">"I'm a content marketer with a business analyst's brain. I studied business in India, digital and content marketing at York, and Information Systems Business Analysis at George Brown. At Missive Digital, I wrote SEO content that helped a client get 73% more inquiries. At Bsquaree, I ran outreach campaigns, managed the pipeline and follow-ups, and used results to improve response rates. I also freelance for B2B clients, and I'm HubSpot Marketing Hub certified. What I want next is a demand gen role where my work shows up in pipeline. That's why I did a week of the job for Limina before applying."</div>
+  <h3>Your work, 1 minute</h3>
+  <div class="say">"I wanted to show, not tell. So I built what the job post asks for: an integrated campaign, a live webinar landing page with a working form and UTM tracking, five emails, the webinar program end to end, LinkedIn ads, case study and rep assets, an ABM pilot and a report tied to pipeline. Then I ran a small ABM play on Tyler: a confidential case file box with UV ink. He said the office thought he'd been served papers."</div>
+  <h3>Your strengths</h3>
+  <ul><li><b>You ship.</b> Proof: the Limina workspace.</li><li><b>You write well</b> for business buyers.</li><li><b>You think in systems</b> (business analysis).</li><li><b>You're creative</b> (the box).</li><li><b>You learn fast</b> (you learned this whole space in days).</li></ul>
+  <h3>Gaps, and how to answer</h3>
+  <table><thead><tr><th>Gap</th><th>Answer</th></tr></thead><tbody>
+    <tr><td>Not much paid ads budget experience</td><td>"I've planned audiences and copy; I'm keen to manage live spend, and I learn tools fast."</td></tr>
+    <tr><td>New to privacy and AI</td><td>"I studied Limina's guides, and the market timing is exactly why I'm excited."</td></tr>
+    <tr><td>No webinar run at scale yet</td><td>"I built the full system: page, form, emails, run-of-show and follow-up. I'm ready to run it live."</td></tr>
+  </tbody></table>
+</section>
+
+<!-- ============ INTERVIEW ============ -->
+<section id="qa">
+  <h2><span class="n">24</span>Questions they may ask (easy to pro)</h2>
+  <p>Tap a question to see a strong answer. Say each one out loud. <span class="lvl l1">BASIC</span><span class="lvl l2">ROLE</span><span class="lvl l3">TECHNICAL</span><span class="lvl l4">PRO</span></p>
+  <div id="qaList"></div>
+</section>
+
+<section id="ask">
+  <h2><span class="n">25</span>Questions you ask</h2>
+  <h3>Your two big questions, polished</h3>
+  <div class="card"><span class="tag">Question 1 · growth into strategic work</span><p style="font-size:19px;margin-top:10px"><b>"As the role grows, how could I get closer to the projects that matter most for Limina's future? What would I need to show in my first 6 to 12 months to earn that?"</b></p><p class="lead" style="font-size:16px;color:var(--mute)">Why it works: it shows ambition plus patience. You're asking how to earn it, not asking to be given it.</p></div>
+  <div class="card"><span class="tag">Question 2 · the "great hire" question</span><p style="font-size:19px;margin-top:10px"><b>"Imagine it's a year from now and you're telling Tyler and Limina's leadership that hiring me was a great decision. What would I have done to make you say that?"</b></p><p class="lead" style="font-size:16px;color:var(--mute)">Why it works: it makes her picture you succeeding, and it tells you exactly what success looks like. Write down her answer.</p></div>
+  <h3>More good questions</h3>
+  <ol>
+    <li>"You mentioned the role is evolving. How is it changing?"</li>
+    <li>"What does success look like in the first 90 days?"</li>
+    <li>"What's the team like today: Tyler, the MDR, anyone else in marketing?"</li>
+    <li>"What's the biggest marketing priority this quarter: webinars, ABM or pipeline?"</li>
+    <li>"Which industries or buyers is Limina focusing on most right now?"</li>
+    <li>"How does Forum support Limina beyond hiring?"</li>
+    <li>"What are the next steps, and the timeline?"</li>
+  </ol>
+  <div class="warn">Ask 3 or 4, not all. Always end with "What are the next steps?"</div>
+</section>
+
+<section id="money">
+  <h2><span class="n">26</span>Salary and logistics</h2>
+  <ul>
+    <li><b>Pay structure:</b> base + variable (bonus tied to results) + equity + benefits.</li>
+    <li><b>First:</b> ask "What's the range for this role?"</li>
+    <li><b>If asked first:</b> "I'm flexible for the right role. For similar roles in Toronto, I'm thinking around $60K to $65K base, and I'm open on the variable and equity mix." This range is an estimate; set your own minimum and don't go below it.</li>
+    <li><b>Location:</b> Toronto, Adelaide St W. Confirm hybrid days.</li>
+    <li><b>Start date and work authorization:</b> have a clear, true one-line answer.</li>
+  </ul>
+  <h3>Before the call</h3>
+  <ul class="check">
+    <li><label><input type="checkbox"> Join 5 minutes early; test the video link</label></li>
+    <li><label><input type="checkbox"> Quiet room, good light, phone on silent</label></li>
+    <li><label><input type="checkbox"> durvathakkar.com/limina open in a tab</label></li>
+    <li><label><input type="checkbox"> Intro, 3 questions and salary range on a sticky note</label></li>
+    <li><label><input type="checkbox"> Water, and a smile</label></li>
+  </ul>
+</section>
+
+<section id="after">
+  <h2><span class="n">27</span>After the call</h2>
+  <p>Send within 2 hours:</p>
+  <div class="card">Hi Ksenia,<br><br>Lovely to meet you, and thank you for the chat today! I enjoyed hearing about [one thing she said].<br><br>I'm even more excited about the role. Here's the work again in case it's helpful for next steps: durvathakkar.com/limina<br><br>Speak soon,<br>Durva</div>
+  <p>Then write down: what she said about the team, the timeline, the salary range, and her answer to your "great hire" question. Use it in the next round with Tyler.</p>
+</section>
+
+<!-- ============ PRACTICE ============ -->
+<section id="gloss">
+  <h2><span class="n">28</span>Glossary</h2>
+  <input class="gsearch" id="gs" placeholder="Search a word, like MQL, ABM or RAG…">
+  <div class="gloss" id="gl"></div>
+</section>
+
+<section id="cards">
+  <h2><span class="n">29</span>Flashcards</h2>
+  <p>Read the word, say the meaning out loud, then tap to check.</p>
+  <div class="fc"><div class="flip" id="flip"><div class="in"><div class="f" id="ff"></div><div class="bk" id="fb"></div></div></div>
+    <div class="fcb"><button id="fPrev">← Back</button><button class="p" id="fFlip">Flip</button><button id="fNext">Next →</button><button id="fShuf">Shuffle</button></div><div class="mono" id="fCount"></div></div>
+</section>
+
+<footer>A personal study guide in plain English. Company facts come from public sources (Limina's website and news, Forum Ventures' website). Benchmarks are rough examples, not facts.</footer>
+</main>
+</div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  // progress + toc
+  const links = [...document.querySelectorAll("nav.toc a")];
+  const secs = links.map(a => document.querySelector(a.getAttribute("href"))).filter(Boolean);
+  addEventListener("scroll", () => {
+    const h = document.documentElement; $("prog").style.width = (scrollY / (h.scrollHeight - innerHeight) * 100) + "%";
+    let cur = secs[0]; secs.forEach(s => { if (s.getBoundingClientRect().top < 120) cur = s; });
+    links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + cur.id));
+  }, { passive: true });
+  $("menu").onclick = () => $("toc").classList.toggle("open");
+  links.forEach(a => a.addEventListener("click", () => $("toc").classList.remove("open")));
+
+  // Q&A
+  const QA = [
+    [1, "Tell me about yourself.", "Use the 60-second intro in 'Your story'. Background, two results (73% inquiries, outreach results), HubSpot, what you want next, and the Limina work."],
+    [1, "Why Limina?", "\"Every company building AI has to protect the sensitive data inside it, and Limina is right at that moment. I want to market a product that matters, on a young team where my campaigns show up in pipeline.\""],
+    [1, "Why demand gen?", "\"I like the full loop: write it, launch it, measure it, improve it. My outreach work at Bsquaree was that loop on a small scale, and I want to do it at a bigger level.\""],
+    [1, "What are you looking for next?", "\"A demand gen role on a small team where I learn fast, own real programs, and my work is measured in pipeline.\""],
+    [1, "Where do you see yourself in 2 to 3 years?", "\"Owning major programs like the webinar series or ABM, and helping build the team as Limina grows. The growth path in the post, toward ABM or campaign leadership, is exactly what I'd want.\""],
+    [1, "What do you know about Limina?", "Use the 3-line pitch: finds and protects PII, PHI and PCI in 52 languages, runs inside the customer's environment, used by banks, insurers and health systems; Contextual Replacement launched in September."],
+    [2, "Walk me through a campaign you ran from start to finish.", "Pick Missive or Bsquaree. Structure: goal → audience → what you built → how you launched → the result → what you'd change. Then mention you also built a full integrated campaign for Limina."],
+    [2, "How would you run our webinar program?", "Topic from sales calls and search → speakers (expert + customer) → 3 to 4 weeks of promotion (email, LinkedIn, ads, MDR invites, partners) → landing page and form with UTMs → reminders → run-of-show → split follow-up for attendees and no-shows → MQLs to the MDR in 24 hours → report."],
+    [2, "How would you work with the MDR?", "\"Agree on what an MQL is and how fast they follow up. Share context with every MQL (what they attended, what they read). Meet weekly to look at which leads turned into meetings, and adjust targeting together.\""],
+    [2, "How would you get customers to agree to a case study?", "Ask CS and Sales who's happy and getting results. Make it easy: 30 minutes, questions in advance, we write it, they approve. Offer anonymous versions for regulated customers. Track approvals and follow up kindly."],
+    [2, "How would you promote an event we're attending?", "Find target accounts attending, email and LinkedIn 4 weeks before ('we're at booth X'), MDR books meetings, social posts, then follow up within 48 hours and report meetings and pipeline."],
+    [2, "How do you handle many projects at once?", "\"One timeline for everything, clear deadlines, a weekly priority list, and early flags if something slips. I built and ran the content calendar that kept marketing on time at Rewynd.\""],
+    [3, "What's an MQL and how is it different from an SQL?", "MQL: a lead that fits our buyer and shows enough interest, by marketing's rules. SQL: sales has talked to them and confirmed a real need. Marketing creates MQLs; the MDR turns them into SQLs."],
+    [3, "What are UTMs and why do they matter?", "Tags on a link (source, medium, campaign, content) that tell us where a visitor came from. The form saves them into HubSpot, so we know which channel and ad drove each lead and can shift budget to what works."],
+    [3, "What's ABM?", "Account-based marketing: pick a short list of high-value companies, map the key people at each, and market to them personally with sales. Tiers: 1:1, 1:few, 1:many. Measure account engagement, meetings and pipeline."],
+    [3, "How would you set up lead scoring?", "Two parts. Fit: title, industry, company size (Privacy Director at a bank scores high). Engagement: webinar attended, pricing page visited, guide downloaded. Set a threshold for MQL, then check with the MDR monthly whether those MQLs turn into meetings, and tune it."],
+    [3, "What's the difference between sourced and influenced pipeline?", "Sourced: the deal started from marketing. Influenced: marketing touched an existing deal. Both matter; sourced shows new demand, influenced shows marketing helps close."],
+    [3, "What is CPL, and is a low CPL always good?", "Cost per lead = spend ÷ leads. Low isn't always good: cheap leads that never become meetings are expensive. Look at cost per MQL, per meeting and per pipeline dollar."],
+    [3, "Which HubSpot features would you use?", "Forms and landing pages, lists (active vs static), workflows for confirmations and MQL hand-off, lifecycle stages, lead scoring, campaign reporting with UTMs, and email A/B tests."],
+    [3, "What metrics would you report every week?", "Leads, MQLs, meetings and pipeline, by channel, vs target and last week. Then what worked, what didn't and why, and one clear recommendation."],
+    [4, "Our LinkedIn cost per lead is high. What would you do?", "Check targeting (too broad or too narrow?), creative (test a document ad or customer proof), the offer (a guide or webinar beats 'book a demo' for cold audiences), the landing page conversion, and Lead Gen Forms. Judge by cost per MQL and meetings, not just CPL. Move budget to what produces meetings."],
+    [4, "Webinar registrations are fine but attendance is low. Why, and what do you do?", "Likely: weak reminders, bad timing, or low commitment. Fix: calendar invite at sign-up, reminders 1 day and 1 hour before, MDR personal invites, promise the recording, a clear 'what you'll learn', Tuesday to Thursday late morning. Then nurture no-shows with the recording."],
+    [4, "How would you explain Limina's value to a CISO in one line?", "\"Limina keeps sensitive data out of your AI pipelines, running inside your own environment with no third-party data processing.\""],
+    [4, "We have $10K for a new campaign. How would you split it?", "Start with the goal and audience, keep most where buyers are (LinkedIn targeting privacy and security leaders at target accounts), add a smaller test (content syndication or a sponsored newsletter), keep a little for retargeting, and decide after 2 to 3 weeks based on cost per MQL and meetings, not clicks."],
+    [4, "How would you design the ABM pilot?", "25 accounts chosen with the MDR from the ICP plus signals, 3 to 5 people mapped per account, clusters (Canadian banks, US insurers), one tailored offer per cluster (roundtable, custom one-pager), LinkedIn ads to those companies, MDR sequences timed after engagement, weekly reviews. Success: engaged accounts, meetings, pipeline."],
+    [4, "What would you do in your first 30 days?", "Learn: shadow the MDR and sales calls, read every guide, audit HubSpot (lists, forms, UTMs, stages), learn the buyers. Ship: support the next webinar's promotion. Fix: one quick win, like UTM consistency or a broken form."],
+    [4, "How do you make sure marketing reaches the right people, not just more people?", "Define the ICP and personas with sales, target by account lists and titles, score fit, and report on leads from target segments, not totals."]
+  ];
+  const L = { 1: ["l1", "BASIC"], 2: ["l2", "ROLE"], 3: ["l3", "TECHNICAL"], 4: ["l4", "PRO"] };
+  $("qaList").innerHTML = QA.map(([l, q, a]) => `<details><summary><span><span class="lvl ${L[l][0]}">${L[l][1]}</span>${q}</span></summary><div>${a}</div></details>`).join("");
+
+  // glossary
+  const G = [
+    ["ABM", "Marketing", "Account-Based Marketing: pick target companies and market to their key people personally, with sales."],
+    ["ICP", "Marketing", "Ideal Customer Profile: the kind of company that's the best fit (industry, size, region)."],
+    ["Persona", "Marketing", "A description of a type of buyer, like 'Privacy Director at a bank'."],
+    ["TOFU / MOFU / BOFU", "Marketing", "Top, middle and bottom of the funnel: awareness, consideration, decision."],
+    ["Lead", "Funnel", "Someone whose contact details we have."],
+    ["MQL", "Funnel", "Marketing Qualified Lead: fits our buyer and showed enough interest."],
+    ["SAL", "Funnel", "Sales Accepted Lead: sales agrees to work the MQL."],
+    ["SQL", "Funnel", "Sales Qualified Lead: sales confirmed a real need."],
+    ["Opportunity", "Funnel", "An active deal with a dollar value."],
+    ["Pipeline", "Funnel", "Total value of all open opportunities."],
+    ["Sourced pipeline", "Funnel", "Deals that started from marketing."],
+    ["Influenced pipeline", "Funnel", "Deals marketing touched along the way."],
+    ["Lead scoring", "Funnel", "Points for fit and engagement that decide when a lead is an MQL."],
+    ["MDR / SDR / BDR", "People", "The person who contacts leads and books meetings."],
+    ["AE", "People", "Account Executive: runs and closes the deal."],
+    ["CS", "People", "Customer Success: helps customers after they buy."],
+    ["CRM", "Tools", "The database of contacts, companies and deals (HubSpot, Salesforce)."],
+    ["Marketing automation", "Tools", "Software that sends emails, runs forms, scores and routes leads."],
+    ["HubSpot workflow", "Tools", "An automation: 'if X happens, do Y'."],
+    ["Active list", "Tools", "A HubSpot list that updates itself based on rules."],
+    ["UTM", "Tools", "Tags on a link that show where a visitor came from."],
+    ["Hidden field", "Tools", "A form field visitors don't see, used to save UTMs and source."],
+    ["Intent data", "Tools", "Signals that a company is researching a topic right now."],
+    ["Enrichment", "Data", "Adding missing details to contacts with a data tool."],
+    ["Segmentation", "Data", "Grouping contacts so you can target them."],
+    ["Deliverability", "Email", "Whether emails reach the inbox, not spam."],
+    ["Nurture", "Email", "An email series that builds trust over time."],
+    ["A/B test", "Email", "Test two versions, keep the winner."],
+    ["CASL", "Email", "Canada's anti-spam law: you need consent to email."],
+    ["CTR", "Metrics", "Click-through rate: clicks ÷ impressions."],
+    ["CPC", "Metrics", "Cost per click."],
+    ["CPM", "Metrics", "Cost per 1,000 impressions."],
+    ["CPL", "Metrics", "Cost per lead."],
+    ["CAC", "Metrics", "Customer acquisition cost."],
+    ["Show rate", "Metrics", "Webinar attendees ÷ registrants."],
+    ["Attribution", "Metrics", "Deciding which marketing gets credit for a deal."],
+    ["Content syndication", "Channels", "Paying a partner to share your content; you get the leads."],
+    ["Co-marketing", "Channels", "Two companies marketing together to share audiences."],
+    ["Owned / earned / paid", "Channels", "Your channels / free shares by others / paid reach."],
+    ["Lead Gen Form", "Channels", "LinkedIn's pre-filled in-app form."],
+    ["Retargeting", "Channels", "Showing ads to people who already visited or engaged."],
+    ["Battlecard", "Sales", "A one-page guide for reps on how to win against alternatives."],
+    ["Enablement", "Sales", "Materials and training that help sales sell."],
+    ["Run-of-show", "Webinars", "The minute-by-minute plan for a live session."],
+    ["PII", "Limina", "Personally Identifiable Information: anything that points to a person."],
+    ["PHI", "Limina", "Protected Health Information: health details linked to a person."],
+    ["PCI", "Limina", "Payment card information."],
+    ["De-identification", "Limina", "Removing or changing details so data can't identify a person."],
+    ["Redaction", "Limina", "Hiding a detail, like [NAME_1]."],
+    ["Contextual Replacement", "Limina", "Limina's feature (Sept 2026) that swaps private details for realistic fake values that fit the context."],
+    ["LLM", "AI", "Large Language Model: AI that reads and writes text."],
+    ["RAG", "AI", "AI that looks up company documents before answering."],
+    ["AI agent", "AI", "AI that takes actions on its own."],
+    ["Prompt", "AI", "What you type into an AI tool."],
+    ["HIPAA", "Laws", "US health privacy law."],
+    ["GDPR", "Laws", "EU privacy law."],
+    ["CPRA", "Laws", "California privacy law."],
+    ["PCI-DSS", "Laws", "Security rules for card payments."],
+    ["PIPEDA", "Laws", "Canada's private-sector privacy law."],
+    ["Pre-seed / seed", "Startups", "The earliest rounds of startup funding."],
+    ["Portfolio company", "Startups", "A company an investor has invested in."],
+    ["Platform team", "Startups", "Investor staff who help portfolio companies (hiring, marketing)."],
+    ["Equity", "Startups", "A small ownership piece of the company."]
+  ];
+  function grender(q = "") { q = q.toLowerCase(); $("gl").innerHTML = G.filter(g => (g[0] + g[1] + g[2]).toLowerCase().includes(q)).map(g => `<div><span class="c">${g[1].toUpperCase()}</span><b>${g[0]}</b>${g[2]}</div>`).join("") || "<div>No match.</div>"; }
+  $("gs").addEventListener("input", e => grender(e.target.value)); grender();
+
+  // flashcards
+  let deck = G.slice(), fi = 0;
+  function frender() { const [w, c, m] = deck[fi]; $("flip").classList.remove("on"); $("ff").innerHTML = `<div>${w}<small>${c.toUpperCase()}</small></div>`; $("fb").textContent = m; $("fCount").textContent = `${fi + 1} / ${deck.length}`; }
+  $("flip").onclick = $("fFlip").onclick = () => $("flip").classList.toggle("on");
+  $("fNext").onclick = () => { fi = (fi + 1) % deck.length; frender(); };
+  $("fPrev").onclick = () => { fi = (fi - 1 + deck.length) % deck.length; frender(); };
+  $("fShuf").onclick = () => { deck.sort(() => Math.random() - .5); fi = 0; frender(); };
+  addEventListener("keydown", e => { if (e.target.tagName === "INPUT") return; if (e.key === "ArrowRight") $("fNext").click(); if (e.key === "ArrowLeft") $("fPrev").click(); });
+  frender();
+})();
+</script>
+</body>
+</html>
