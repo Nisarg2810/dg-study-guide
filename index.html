@@ -109,6 +109,134 @@
   footer { margin-top: 60px; color: var(--mute); font-size: 14px; }
   .mono { font-family: "JetBrains Mono", monospace; font-size: 14px; }
   button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  /* ===== ABM LAB ===== */
+  .labhero { background: radial-gradient(circle at 85% 0%, rgba(33,112,241,.4), transparent 55%), var(--navy); color: #fff; border-radius: 24px; padding: 36px 40px; }
+  .labhero h2 { margin-top: 8px; }
+  .labhero p { color: #c8d0e6; max-width: 66ch; }
+  .labhero .k { font: 700 12px "JetBrains Mono", monospace; letter-spacing: .12em; color: #8fb4ff; }
+  .stepper { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-top: 18px; }
+  .stepper button { font: inherit; font-size: 13.5px; font-weight: 600; text-align: left; border: 1px solid var(--line); background: #fff; border-radius: 12px; padding: 10px 10px 12px; cursor: pointer; position: relative; line-height: 1.3; min-width: 0; }
+  .stepper button small { display: block; font: 700 10px "JetBrains Mono", monospace; color: var(--mute); letter-spacing: .06em; margin-bottom: 4px; }
+  .stepper button i { position: absolute; left: 10px; right: 10px; bottom: 5px; height: 3px; border-radius: 2px; background: var(--line); }
+  .stepper button.on { border-color: var(--blue); background: var(--blue-50); color: var(--blue); }
+  .stepper button.on i, .stepper button.past i { background: var(--blue); }
+  .stagecard { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; margin-top: 10px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+  .stagecard h4 { margin: 0 0 2px; font: 700 11px "JetBrains Mono", monospace; letter-spacing: .1em; color: var(--blue); text-transform: uppercase; }
+  .stagecard .think { grid-column: 1 / -1; font-size: 19px; font-weight: 500; }
+  .stagecard p { margin-top: 0; font-size: 15.5px; }
+  .own { display: inline-block; font: 700 11px "JetBrains Mono", monospace; padding: 3px 8px; border-radius: 6px; margin-right: 4px; }
+  .o-dg { background: var(--blue-50); color: var(--blue); } .o-mdr { background: var(--amber-50); color: var(--amber); } .o-ae { background: var(--green-50); color: var(--green); }
+  .lanes6 { display: grid; grid-template-columns: 130px repeat(6, minmax(70px, 1fr)); min-width: 640px; margin-top: 12px; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; font-size: 13.5px; }
+  .lanes6 > div { padding: 9px 10px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); min-height: 44px; }
+  .lanes6 .lh { font: 700 11px "JetBrains Mono", monospace; color: var(--mute); background: #faf9f6; }
+  .lanes6 .ln { font-weight: 600; background: #faf9f6; }
+  .dot { display: inline-block; border-radius: 8px; padding: 2px 7px; font-size: 12px; line-height: 1.4; margin: 1px 0; }
+  .d-ad { background: var(--blue-50); color: var(--blue); } .d-em { background: var(--violet-50); color: var(--violet); } .d-dm { background: var(--amber-50); color: var(--amber); } .d-ev { background: var(--green-50); color: var(--green); } .d-sa { background: #fde8e8; color: var(--red); }
+  /* excel */
+  .xl { margin-top: 16px; border: 1px solid #c9ccd1; border-radius: 10px; overflow: hidden; background: #fff; font-family: "Segoe UI", -apple-system, system-ui, sans-serif; }
+  .xltop { background: #107c41; color: #fff; display: flex; align-items: center; gap: 10px; padding: 8px 12px; font-size: 14px; flex-wrap: wrap; }
+  .xlicon { background: #fff; color: #107c41; font-weight: 800; width: 22px; height: 22px; border-radius: 4px; display: grid; place-items: center; font-size: 13px; }
+  .xlsub { margin-left: auto; font-size: 12px; opacity: .85; }
+  .xlbar { display: flex; align-items: center; border-bottom: 1px solid #d4d6da; font-size: 13px; background: #fff; }
+  .xlref { width: 70px; padding: 6px 8px; border-right: 1px solid #d4d6da; font-weight: 600; color: #333; }
+  .xlfx { padding: 6px 10px; color: #888; font-style: italic; border-right: 1px solid #d4d6da; }
+  .xlval { padding: 6px 10px; color: #222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; font-family: "JetBrains Mono", monospace; font-size: 12.5px; }
+  .xlgrid { overflow: auto; max-height: 620px; }
+  .xlgrid table { margin: 0; border-collapse: collapse; font-size: 13px; min-width: max-content; width: auto; }
+  .xlgrid th, .xlgrid td { border: 1px solid #e1e3e6; padding: 5px 9px; white-space: nowrap; line-height: 1.4; font-family: inherit; }
+  .xlgrid th { background: #f3f4f6; color: #555; font: 600 12px "Segoe UI", system-ui, sans-serif; text-align: center; letter-spacing: 0; text-transform: none; position: sticky; top: 0; z-index: 1; }
+  .xlgrid td.rn { background: #f3f4f6; color: #666; text-align: center; font-size: 12px; position: sticky; left: 0; }
+  .xlgrid tr.hdr td:not(.rn) { background: #0b1020; color: #fff; font-weight: 600; }
+  .xlgrid td.sel { outline: 2px solid #107c41; outline-offset: -2px; }
+  .xlgrid td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .xlgrid td.hi { background: #e3f5ee; color: #0b5d3b; font-weight: 700; }
+  .xlgrid td.md { background: #fdf3e2; color: #8a4b04; font-weight: 700; }
+  .xlgrid td.lo { background: #f3f4f6; color: #555; font-weight: 700; }
+  .xlgrid td input { width: 54px; font: inherit; border: 1px solid #107c41; border-radius: 3px; padding: 1px 4px; text-align: right; background: #f0fbf5; }
+  .xlgrid td.note { color: #666; font-style: italic; white-space: normal; min-width: 220px; }
+  .xltabs { display: flex; gap: 2px; background: #f3f4f6; border-top: 1px solid #d4d6da; padding: 0 8px; overflow-x: auto; }
+  .xltabs button { font: 13px "Segoe UI", system-ui, sans-serif; border: 0; background: transparent; padding: 7px 14px; cursor: pointer; color: #444; border-bottom: 3px solid transparent; white-space: nowrap; }
+  .xltabs button.on { background: #fff; color: #107c41; font-weight: 600; border-bottom-color: #107c41; }
+  /* worksheets */
+  .wsprog, .wprog { display: flex; align-items: center; gap: 12px; font-weight: 600; margin-top: 14px; font-size: 15px; }
+  .bar2 { flex: 1; max-width: 300px; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .bar2 i { display: block; height: 100%; width: 0; background: var(--green); transition: width .3s; }
+  .ws { background: #fff; border: 1px solid var(--line); border-radius: 18px; margin-top: 14px; overflow: hidden; }
+  .ws.isdone { border-color: #9fd8bf; }
+  .wsh { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; padding: 16px 18px; cursor: pointer; }
+  .wsh b { font-size: 17.5px; display: block; line-height: 1.35; } .wsh small { color: var(--mute); font-size: 13.5px; }
+  .wsn { font: 700 13px "JetBrains Mono", monospace; background: var(--blue); color: #fff; border-radius: 10px; padding: 8px 10px; }
+  .ws.isdone .wsn { background: var(--green); }
+  .done { font-size: 13.5px; color: var(--mute); display: flex; gap: 6px; align-items: center; cursor: pointer; white-space: nowrap; }
+  .done input { accent-color: var(--green); width: 17px; height: 17px; }
+  .wsb { display: none; padding: 0 18px 20px; border-top: 1px solid var(--line); }
+  .ws.open .wsb { display: block; }
+  .f2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; margin-top: 16px; }
+  .wsb label { display: block; font-size: 13.5px; font-weight: 600; color: #444; position: relative; }
+  .wsb label.full { margin-top: 14px; }
+  .wsb input:not([type=checkbox]), .wsb textarea, .wsb select { display: block; width: 100%; margin-top: 5px; font: 400 15.5px "Lexend", sans-serif; border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; background: #fcfcfa; color: var(--ink); }
+  .wsb input:focus, .wsb textarea:focus, .wsb select:focus { outline: 2px solid var(--blue); border-color: var(--blue); background: #fff; }
+  .wsb .check label { font-weight: 400; font-size: 15px; color: var(--ink); }
+  .cnt { position: absolute; right: 8px; top: 0; font: 700 11px "JetBrains Mono", monospace; color: var(--green); }
+  .cnt.over { color: var(--red); }
+  .out { margin-top: 14px; background: var(--blue-50); border-radius: 12px; padding: 12px 16px; font-size: 15.5px; word-break: break-all; }
+  .out:empty { display: none; }
+  .out.mono { font-size: 13px; }
+  .btn { font: 600 14.5px "Lexend", sans-serif; background: var(--blue); color: #fff; border: 0; border-radius: 999px; padding: 9px 18px; margin-top: 14px; cursor: pointer; }
+  .res { margin-top: 12px; font-size: 15px; }
+  .q { border-top: 1px solid var(--line); padding: 12px 0; display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 12px; align-items: center; font-size: 15.5px; }
+  .q:first-child { border-top: 0; margin-top: 8px; }
+  .q.right { background: linear-gradient(90deg, var(--green-50), transparent); } .q.wrong { background: linear-gradient(90deg, #fde8e8, transparent); }
+  .q .ex { grid-column: 1 / -1; font-size: 14px; color: var(--mute); display: none; }
+  .q.right .ex, .q.wrong .ex { display: block; }
+  .mc { border-top: 1px solid var(--line); padding: 12px 0; }
+  .mc p { margin: 0 0 6px; font-weight: 600; }
+  .mc label { font-weight: 400 !important; font-size: 15px !important; display: flex !important; gap: 8px; align-items: center; padding: 3px 0; color: var(--ink) !important; }
+  .mc label input { accent-color: var(--blue); }
+  .mc.right p::after { content: "  ✓"; color: var(--green); } .mc.wrong p::after { content: "  ✗"; color: var(--red); }
+  .mc .ex { display: none; font-size: 14px; color: var(--mute); margin-top: 4px; }
+  .mc.right .ex, .mc.wrong .ex { display: block; }
+  details.key { margin-top: 14px; border: 1px dashed var(--line); }
+  details.key summary { font-size: 15px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .links a { text-decoration: none; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 7px 14px; font-size: 14.5px; font-weight: 500; }
+  .links a:hover { border-color: var(--blue); }
+  .people { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 14px; }
+  .person { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
+  .person b { font-size: 17px; } .person small { display: block; color: var(--mute); font-size: 13.5px; line-height: 1.4; margin: 2px 0 8px; }
+  .person p { font-size: 14.5px; margin-top: 0; line-height: 1.55; }
+  .person a { font-size: 14px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 8px; }
+  .post { background: #fff; border: 1px solid #e0dfdc; border-radius: 12px; max-width: 560px; margin-top: 12px; font: 14.5px/1.5 -apple-system, system-ui, sans-serif; }
+  .ph { display: flex; gap: 10px; align-items: center; padding: 14px 16px 6px; }
+  .pav { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: #fff; display: grid; place-items: center; font-weight: 700; }
+  .ph small { display: block; color: #666; font-size: 12.5px; }
+  .pt { padding: 4px 16px 16px; white-space: pre-line; }
+  .vgrp { margin-top: 26px; }
+  .lvl { white-space: nowrap; }
+  .vgrp h3 { margin: 0 0 10px; }
+  .vids { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .vid { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+  .vid.seen { opacity: .62; }
+  .vid a.th { position: relative; display: block; aspect-ratio: 16/9; background: #111 center/cover; }
+  .vid a.th span { position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.8); color: #fff; font: 600 11.5px "JetBrains Mono", monospace; padding: 2px 6px; border-radius: 4px; }
+  .vid a.th::after { content: "▶"; position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-size: 30px; text-shadow: 0 2px 10px rgba(0,0,0,.6); opacity: .9; }
+  .vid .vb { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .vid .vt { font-size: 14.5px; font-weight: 600; line-height: 1.35; }
+  .vid .vc { font-size: 12.5px; color: var(--mute); }
+  .vid .vw { font-size: 13.5px; line-height: 1.45; color: #333; }
+  .vid label { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--mute); display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  .vid label input { accent-color: var(--green); }
+  .pday { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+  .pday label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-size: 15px; line-height: 1.5; }
+  .pday input { margin-top: 5px; accent-color: var(--green); width: 17px; height: 17px; flex-shrink: 0; }
+  .pday b { color: var(--blue); font: 700 12px "JetBrains Mono", monospace; display: block; }
+  @media (max-width: 900px) {
+    .stepper { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .stagecard, .f2 { grid-template-columns: minmax(0, 1fr); }
+    .q { grid-template-columns: minmax(0, 1fr); }
+    .labhero { padding: 26px 22px; }
+  }
 </style>
 </head>
 <body>
@@ -121,6 +249,8 @@
   <a href="#vc">Startup money 101</a><a href="#forum">Forum Ventures</a><a href="#limina">Limina, from zero</a><a href="#tech">Limina's tech words</a><a href="#buyers">Who buys Limina</a><a href="#pitch">Explain Limina in 3 sizes</a>
   <div class="grp">Marketing, zero to pro</div>
   <a href="#funnel">The funnel</a><a href="#leads">Leads, MQLs, pipeline</a><a href="#metrics">The numbers</a><a href="#tools">Tools: CRM, HubSpot, UTMs</a><a href="#abm">ABM, deep dive</a><a href="#webinars">Webinars, deep dive</a><a href="#email">Email programs</a><a href="#paid">LinkedIn ads + paid</a><a href="#content">Content promotion</a><a href="#events">Events</a><a href="#cases">Case studies</a><a href="#enable">Sales enablement</a><a href="#data">Lists + data</a><a href="#report">Reporting</a>
+  <div class="grp">ABM lab (new)</div>
+  <a href="#lab">Start the lab</a><a href="#journey">The ABM journey</a><a href="#sheet">The tracker (sheet view)</a><a href="#worksheets">8 worksheets</a><a href="#dmail">Direct mail</a><a href="#liads">LinkedIn ads for ABM</a><a href="#liposts">LinkedIn posts to learn from</a><a href="#watch">Videos to watch</a><a href="#plan2">2-week practice plan</a>
   <div class="grp">The job</div>
   <a href="#jd">Job post, line by line</a><a href="#success">How success is measured</a><a href="#you">Your story</a>
   <div class="grp">The interview</div>
@@ -140,6 +270,7 @@
     <div><b>30 MIN</b>Read "Job post, line by line".</div>
     <div><b>20 MIN</b>Answer every question in "Questions they may ask" out loud.</div>
     <div><b>10 MIN</b>Flashcards. Then breathe. 🙂</div>
+    <div><b>NEW</b><a href="#lab" style="color:#fff">ABM lab: journey, tracker, worksheets, direct mail, ads, videos →</a></div>
   </div>
 </header>
 
@@ -584,6 +715,292 @@
     <div class="fcb"><button id="fPrev">← Back</button><button class="p" id="fFlip">Flip</button><button id="fNext">Next →</button><button id="fShuf">Shuffle</button></div><div class="mono" id="fCount"></div></div>
 </section>
 
+<!-- ============ ABM LAB ============ -->
+<section id="lab">
+  <div class="labhero">
+    <div class="k">NEW · ABM LAB · LEARN BY DOING</div>
+    <h2 style="color:#fff">Read it, see it, then do it yourself.</h2>
+    <p>The guide above explains the words. This lab makes them real. You'll follow one account through the whole ABM journey and open the tracker like a real spreadsheet. Then you'll fill in 8 worksheets, plan a direct mail send, write a LinkedIn ad and watch the best videos on each topic. Your answers save in this browser, so you can come back any time.</p>
+    <div class="plan">
+      <div><b>30</b>The ABM journey</div><div><b>31</b>The tracker (spreadsheet view)</div><div><b>32</b>8 worksheets</div><div><b>33</b>Direct mail</div><div><b>34</b>LinkedIn ads for ABM</div><div><b>35</b>LinkedIn posts to learn from</div><div><b>36</b>Videos to watch</div><div><b>37</b>2-week practice plan</div>
+    </div>
+  </div>
+</section>
+
+<!-- 30 JOURNEY -->
+<section id="journey">
+  <h2><span class="n">30</span>The ABM journey, one account at a time</h2>
+  <p class="lead">In ABM you don't count leads. You move <b>whole companies</b> from "never heard of us" to "customer". Tap each stage to see what the buyer is thinking, what you do and who owns it.</p>
+  <div class="simple">Normal marketing asks "how many people signed up?". ABM asks "how many of our 25 dream companies moved one step closer this month?"</div>
+  <div class="stepper" id="stepper"></div>
+  <div class="stagecard" id="stagecard"></div>
+
+  <h3>Surround sound: what 6 weeks look like for one account</h3>
+  <p>This is a <b>practice example</b> with a made-up bank called Northbay Bank. Every dot is one touch. The trick is that the channels work <b>together</b>. Ads warm people up, so the email gets opened. The email makes the gift make sense. The gift gets the meeting.</p>
+  <div class="scroll"><div class="lanes6" id="lanes6"></div></div>
+  <div class="eg">Week 1: Northbay's people see LinkedIn ads. Week 2: Marc (Head of Data Science) clicks one and tries the sandbox. Week 2: the MDR emails Marc personally. Week 3: you send a direct mail box to Priya, the CISO, with a QR code to her own page. Week 4: Priya scans it, and the MDR connects on LinkedIn. Week 5: the privacy officer registers for the roundtable. Week 6: discovery call booked. That's ABM.</div>
+  <div class="warn">The most common mistake is running every channel on its own. If the MDR doesn't know the gift arrived on Tuesday, the follow-up call on Wednesday never happens, and the gift is wasted. Share one tracker and hold one weekly check-in.</div>
+</section>
+
+<!-- 31 SHEET -->
+<section id="sheet">
+  <h2><span class="n">31</span>The ABM tracker, spreadsheet view</h2>
+  <p class="lead">This is what an ABM tracker looks like in Excel or Google Sheets. Click any cell to see its value or formula in the bar at the top. Switch tabs at the bottom, like in Excel. On the <b>Score</b> tab you can type numbers and watch the total change.</p>
+  <div class="xl">
+    <div class="xltop"><span class="xlicon">X</span><b>ABM_Tracker_practice.xlsx</b><span class="xlsub">Practice data · made-up companies</span></div>
+    <div class="xlbar"><span class="xlref" id="xlref">A1</span><span class="xlfx">fx</span><span class="xlval" id="xlval"></span></div>
+    <div class="xlgrid" id="xlgrid"></div>
+    <div class="xltabs" id="xltabs"></div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card"><span class="tag">Accounts tab</span><p>One row per company. <b>Score = Fit + Intent + Engagement</b>. Sort by score every Monday, and the top rows are where you and the MDR spend the week.</p></div>
+    <div class="card"><span class="tag">Committee + Touches</span><p>Who the people are, what each one cares about and every touch with a date. This is how you and the MDR never send the same thing twice.</p></div>
+    <div class="card"><span class="tag">Stages + Score</span><p>Clear rules for when an account moves stage. A score of 70+ makes it an MQA (marketing-qualified account), and the MDR takes it from there.</p></div>
+  </div>
+  <p>Want the full version? Here's the <a href="https://docs.google.com/spreadsheets/d/1PJRTOf6nM2xPfKLugdep5ycYammV5DePMoqyAngY5Lo/edit?usp=sharing" target="_blank" rel="noopener">15-tab Limina tracker in Google Sheets</a>, with the same idea at full size.</p>
+</section>
+
+<!-- 32 WORKSHEETS -->
+<section id="worksheets">
+  <h2><span class="n">32</span>8 worksheets</h2>
+  <p class="lead">Do these with a pen-and-paper mindset: try first, then check. Your answers save in this browser automatically.</p>
+  <div class="wsprog"><span id="wsdone">0</span> of 8 worksheets done <div class="bar2"><i id="wsbar"></i></div></div>
+
+  <div class="ws" data-ws="1">
+    <div class="wsh"><span class="wsn">W1</span><div><b>Build an ICP (Ideal Customer Profile)</b><small>10 min · fill the blanks, and the sentence writes itself</small></div><label class="done"><input type="checkbox" data-done="1"> Done</label></div>
+    <div class="wsb">
+      <div class="f2">
+        <label>Industry<input data-k="icp_ind" placeholder="e.g. banks and insurers"></label>
+        <label>Company size<input data-k="icp_size" placeholder="e.g. 1,000+ employees"></label>
+        <label>Region<input data-k="icp_reg" placeholder="e.g. Canada and the US"></label>
+        <label>What they're doing right now (trigger)<input data-k="icp_trig" placeholder="e.g. putting customer data into AI tools"></label>
+        <label>Their pain<input data-k="icp_pain" placeholder="e.g. privacy and legal keep blocking AI projects"></label>
+        <label>Who feels it most<input data-k="icp_who" placeholder="e.g. CISO, privacy officer, head of data science"></label>
+      </div>
+      <div class="out" id="icpout"></div>
+      <details class="key"><summary>Show a model answer for Limina</summary><div>"Our best customers are <b>banks, insurers and health systems</b> with <b>1,000+ employees</b> in <b>North America</b> that are <b>putting sensitive text data into AI and analytics</b>. Their pain: <b>privacy and legal teams slow or block AI projects</b>. The people who feel it most: <b>CISO, Chief Privacy Officer, Head of Data Science and ML engineers</b>."</div></details>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="2">
+    <div class="wsh"><span class="wsn">W2</span><div><b>Tier the accounts: 1:1, 1:few or 1:many?</b><small>8 min · pick, then press Check</small></div><label class="done"><input type="checkbox" data-done="2"> Done</label></div>
+    <div class="wsb"><div id="tierq"></div><button class="btn" id="tiercheck">Check my answers</button><div class="res" id="tierres"></div></div>
+  </div>
+
+  <div class="ws" data-ws="3">
+    <div class="wsh"><span class="wsn">W3</span><div><b>Map the buying committee</b><small>8 min · one Limina deal at Northbay Bank has 5 people. What role does each play?</small></div><label class="done"><input type="checkbox" data-done="3"> Done</label></div>
+    <div class="wsb"><div id="bcq"></div><button class="btn" id="bccheck">Check my answers</button><div class="res" id="bcres"></div>
+      <div class="simple">In B2B, one person rarely buys alone. The <b>champion</b> wants it. The <b>decision maker</b> signs. The <b>blocker</b> can say no. The <b>user</b> works with it every day. The <b>gatekeeper</b> controls the process (often procurement). Your ABM has to reach all of them, with a different message for each.</div>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="4">
+    <div class="wsh"><span class="wsn">W4</span><div><b>Plan a direct mail send</b><small>15 min · use one of your own real target companies</small></div><label class="done"><input type="checkbox" data-done="4"> Done</label></div>
+    <div class="wsb">
+      <div class="f2">
+        <label>Company<input data-k="dm_co"></label>
+        <label>Person and title<input data-k="dm_who"></label>
+        <label>Why them, why now<input data-k="dm_why" placeholder="news, hiring, launch, funding..."></label>
+        <label>The idea (one line)<input data-k="dm_idea" placeholder="what makes it about THEM"></label>
+        <label>What's in the box<input data-k="dm_box"></label>
+        <label>Cost incl. shipping<input data-k="dm_cost"></label>
+        <label>Where the QR code goes (with UTM)<input data-k="dm_qr"></label>
+        <label>Follow-up plan (day 1, 3, 7)<input data-k="dm_fu"></label>
+      </div>
+      <label class="full">Handwritten note (40 words max)<textarea data-k="dm_note" rows="3"></textarea><span class="cnt" data-cnt="dm_note" data-max="40" data-unit="w"></span></label>
+      <details class="key"><summary>Show your BorderPass send as the example</summary><div><b>Company:</b> BorderPass · <b>Person:</b> Michael Pietrocarlo · <b>Why now:</b> open Marketing Specialist role · <b>Idea:</b> a real-looking passport, since BorderPass is about immigration and the passport is their world · <b>Box:</b> printed passport in a confidential envelope · <b>QR:</b> to the digital passport twin at durvathakkar.com/borderpass/passport/ · <b>Follow-up:</b> LinkedIn message on the delivery day, then an email two business days later. <a href="https://durvathakkar.com/borderpass/passport/" target="_blank" rel="noopener">Open the digital twin</a></div></details>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="5">
+    <div class="wsh"><span class="wsn">W5</span><div><b>Write a LinkedIn ABM ad</b><small>15 min · live character counters show where LinkedIn cuts your text</small></div><label class="done"><input type="checkbox" data-done="5"> Done</label></div>
+    <div class="wsb">
+      <div class="f2">
+        <label>Who is it for (layer)<select data-k="ad_layer"><option value="cold">Cold: never engaged</option><option value="warm">Warm: visited or clicked before</option><option value="hot">Hot: high intent, target account</option></select></label>
+        <label>Persona<input data-k="ad_persona" placeholder="e.g. CISO at a bank"></label>
+      </div>
+      <label class="full">Intro text: the hook must fit in the first 150 characters<textarea data-k="ad_intro" rows="3"></textarea><span class="cnt" data-cnt="ad_intro" data-max="150"></span></label>
+      <label class="full">Headline (under the image): keep it under 70<input data-k="ad_hl"><span class="cnt" data-cnt="ad_hl" data-max="70"></span></label>
+      <div class="out" id="adtip"></div>
+      <ul class="check" id="adcheck">
+        <li><label><input type="checkbox"> Only my company could say this (swap test: put a competitor's logo on it, does it still work?)</label></li>
+        <li><label><input type="checkbox"> One idea only</label></li>
+        <li><label><input type="checkbox"> Any number says what it measures</label></li>
+        <li><label><input type="checkbox"> The CTA matches the layer</label></li>
+        <li><label><input type="checkbox"> No em dashes or emoji bullets in the first line</label></li>
+      </ul>
+      <details class="key"><summary>Show a strong example</summary><div><b>Cold, privacy lead:</b> "Is Hope a feeling or a patient? A regex can't tell. A clinician can. So can Limina." · <b>Headline:</b> "One word, two meanings. Try it yourself." · <b>CTA:</b> try the sentence in the sandbox. See the full breakdown in <a href="https://durvathakkar.com/limina/ads/#rw2" target="_blank" rel="noopener">your Limina ads audit</a>.</div></details>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="6">
+    <div class="wsh"><span class="wsn">W6</span><div><b>Build a UTM link</b><small>5 min · so every ad, email and QR code can be tracked</small></div><label class="done"><input type="checkbox" data-done="6"> Done</label></div>
+    <div class="wsb">
+      <div class="f2">
+        <label>Page URL<input data-k="u_url" placeholder="https://www.getlimina.ai/"></label>
+        <label>Source (where)<input data-k="u_src" placeholder="linkedin, newsletter, direct-mail"></label>
+        <label>Medium (what kind)<input data-k="u_med" placeholder="paid-social, email, print"></label>
+        <label>Campaign (which)<input data-k="u_camp" placeholder="abm-banks-q1"></label>
+        <label>Content (which version)<input data-k="u_cont" placeholder="hope-ad-v2"></label>
+      </div>
+      <div class="out mono" id="utmout"></div><button class="btn" id="utmcopy">Copy link</button>
+      <div class="simple">Rule: lowercase only, hyphens not spaces, and the same names every time. "LinkedIn" and "linkedin" count as two different sources in reports.</div>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="7">
+    <div class="wsh"><span class="wsn">W7</span><div><b>Write a 1:1 email to one person at a target account</b><small>15 min · the MDR will thank you</small></div><label class="done"><input type="checkbox" data-done="7"> Done</label></div>
+    <div class="wsb">
+      <label class="full">Subject line (under 6 words)<input data-k="em_sub"></label>
+      <label class="full">Email (under 90 words)<textarea data-k="em_body" rows="6"></textarea><span class="cnt" data-cnt="em_body" data-max="90" data-unit="w"></span></label>
+      <ul class="check">
+        <li><label><input type="checkbox"> Line 1 is about THEM (a post, news, a hire), not about us</label></li>
+        <li><label><input type="checkbox"> One problem they likely have, in their words</label></li>
+        <li><label><input type="checkbox"> One proof point with a name or number</label></li>
+        <li><label><input type="checkbox"> One small ask (a link, a 15-min call), not three</label></li>
+        <li><label><input type="checkbox"> Reads like a person wrote it</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ws" data-ws="8">
+    <div class="wsh"><span class="wsn">W8</span><div><b>ABM quiz, 10 questions</b><small>5 min</small></div><label class="done"><input type="checkbox" data-done="8"> Done</label></div>
+    <div class="wsb"><div id="quiz"></div><button class="btn" id="quizcheck">Check my score</button><div class="res" id="quizres"></div></div>
+  </div>
+</section>
+
+<!-- 33 DIRECT MAIL -->
+<section id="dmail">
+  <h2><span class="n">33</span>Direct mail, from zero</h2>
+  <div class="simple">Direct mail means sending something physical (a letter, a book, a box) to one person at a target company. Inboxes are crowded, but desks are not. A good package gets opened, shown to colleagues and remembered, and that earns the follow-up call.</div>
+  <h3>Why it works in ABM</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag">Attention</span><p>An executive gets a lot of email every day and very few packages. A box is hard to ignore.</p></div>
+    <div class="card"><span class="tag">Effort = respect</span><p>A thoughtful, personal item says "we did our homework on you". That's the whole feeling ABM is trying to create.</p></div>
+    <div class="card"><span class="tag">A reason to follow up</span><p>"Did the box arrive?" is the easiest first line an MDR will ever get.</p></div>
+  </div>
+  <h3>The 7 steps</h3>
+  <ol>
+    <li><b>Pick the person</b>, not just the company. Usually the decision maker or the champion.</li>
+    <li><b>Find the reason</b>: their news, their post, their launch, their pain. This decides the idea.</li>
+    <li><b>Make the idea about them</b>: a passport for an immigration company, a "case file" for a security team. The idea beats the price.</li>
+    <li><b>Check the address</b>. Office or home? (Home needs permission. Many people work remotely, so ask or use a gifting tool that asks for them.)</li>
+    <li><b>Add a bridge to digital</b>: a QR code with a UTM to a personal page, so you know when they open it.</li>
+    <li><b>Tell sales the delivery date</b>, so the MDR follows up the same day or the day after.</li>
+    <li><b>Log it</b> in the tracker: sent, delivered, scanned, replied, meeting.</li>
+  </ol>
+  <h3>Rough cost ladder</h3>
+  <div class="scroll"><table><thead><tr><th>Type</th><th>Rough cost each</th><th>Best for</th></tr></thead><tbody>
+    <tr><td><b>Postcard or letter</b></td><td>a few dollars</td><td>1:many, event invites</td></tr>
+    <tr><td><b>A book with a handwritten note</b></td><td>$20 to $40</td><td>1:few, thought leadership</td></tr>
+    <tr><td><b>A custom printed piece</b> (like your passport)</td><td>$30 to $100</td><td>1:1, top accounts</td></tr>
+    <tr><td><b>A curated box or experience</b></td><td>$75 to $250+</td><td>1:1, late-stage deals</td></tr>
+  </tbody></table></div>
+  <p style="font-size:14px;color:var(--mute)">Rough ranges to help you plan. Always get real quotes from a print shop or gifting tool first.</p>
+  <h3>Tools people use</h3>
+  <p><b>Sendoso, Reachdesk, Postal</b> and <b>Alyce</b> are gifting platforms. They store items, ship them and some ask the person for their address, so you never need it. For one-off custom pieces, a local print shop works fine, which is how you did yours.</p>
+  <div class="warn">Healthcare, government and many banks have <b>gift rules</b>, and some people can't accept gifts over a small amount (or at all). For Limina's buyers, this matters. Send useful, low-cost, clever items (a printed field guide, a report, a book) rather than expensive swag, and check the account's policy when you can.</div>
+  <h3>Your own direct mail work, as examples</h3>
+  <p>You've already built these. Each one has a digital twin that matches the printed piece:</p>
+  <div class="links">
+    <a href="https://durvathakkar.com/borderpass/passport/" target="_blank" rel="noopener">BorderPass passport</a>
+    <a href="https://durvathakkar.com/agencyanalytics/mail/" target="_blank" rel="noopener">AgencyAnalytics</a>
+    <a href="https://durvathakkar.com/contactmonkey/mail/" target="_blank" rel="noopener">ContactMonkey</a>
+    <a href="https://durvathakkar.com/float/mail/" target="_blank" rel="noopener">Float</a>
+    <a href="https://durvathakkar.com/bluej/mail/" target="_blank" rel="noopener">Blue J</a>
+    <a href="https://durvathakkar.com/lanefour/mail/" target="_blank" rel="noopener">Lane Four</a>
+    <a href="https://durvathakkar.com/venn/mail/" target="_blank" rel="noopener">Venn</a>
+    <a href="https://durvathakkar.com/borderless/mail/" target="_blank" rel="noopener">Borderless</a>
+  </div>
+  <div class="say">"Direct mail in ABM is not a gift, it's a door opener. I pick one person, build an idea that's only about them, put a QR code to a personal page on it and line up the MDR's follow-up for delivery day. I measure it by scans, replies and meetings, not by how nice the box looked."</div>
+</section>
+
+<!-- 34 LINKEDIN ADS -->
+<section id="liads">
+  <h2><span class="n">34</span>LinkedIn ads for ABM</h2>
+  <div class="simple">LinkedIn lets you upload a list of company names and show ads <b>only to people who work there</b>. You can also narrow it to job titles or functions. So instead of paying to reach everyone, you pay to reach the privacy team at your 25 dream banks. That's why LinkedIn is the main ad channel for B2B ABM.</div>
+  <h3>How to set it up (Campaign Manager)</h3>
+  <ol>
+    <li><b>Upload the company list</b> (Audiences → Matched audiences → company list). Use a CSV of company names plus website domains for a better match.</li>
+    <li><b>Check the match rate.</b> If a company doesn't match, add its LinkedIn page URL.</li>
+    <li><b>Layer job functions or titles</b> on top: security, legal, IT, data science, engineering, plus seniority.</li>
+    <li><b>Mind the size.</b> LinkedIn needs at least 300 matched members before an ad can run. Small 1:1 lists often need to be grouped into a 1:few cluster.</li>
+    <li><b>Build the layers</b>: cold (the list), warm (retarget site visitors, video viewers and document openers), hot (people who engaged a lot).</li>
+    <li><b>Install the Insight Tag</b> on the website so you can retarget visitors and track conversions.</li>
+    <li><b>Add UTMs</b> to every ad (worksheet W6) so the tracker sees which ad moved which account.</li>
+  </ol>
+  <h3>Which format for which job</h3>
+  <div class="scroll"><table><thead><tr><th>Format</th><th>What it is</th><th>Use it for</th></tr></thead><tbody>
+    <tr><td><b>Single image</b></td><td>One picture, text and a button</td><td>One sharp idea, problem hooks, proof</td></tr>
+    <tr><td><b>Thought leader ad</b></td><td>A real person's post, boosted with money</td><td>Trust and reach. People stop for faces. Often the best performer in B2B.</td></tr>
+    <tr><td><b>Document ad</b></td><td>A PDF people flip through in the feed</td><td>Guides and reports. Can ask for a form after a few pages.</td></tr>
+    <tr><td><b>Carousel</b></td><td>Swipeable cards</td><td>A story in steps (problem, why, how, proof, CTA)</td></tr>
+    <tr><td><b>Video</b></td><td>Short clips</td><td>Demos, customer voices, event clips</td></tr>
+    <tr><td><b>Message ad</b></td><td>A sponsored message in the LinkedIn inbox</td><td>Event invites from a real person, hot accounts</td></tr>
+    <tr><td><b>Event ad</b></td><td>Promotes a LinkedIn event</td><td>Webinars and roundtables</td></tr>
+  </tbody></table></div>
+  <h3>The 4 rules that matter most</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">150 characters</span><p>LinkedIn cuts the text with "...see more" on mobile. The hook must fit before the cut.</p></div>
+    <div class="card"><span class="tag">95 : 5</span><p>Only about 5% of buyers are shopping right now. Cold ads should be memorable and helpful, not "book a demo".</p></div>
+    <div class="card"><span class="tag">Ask matches temperature</span><p>Cold gets a free tool or guide. Warm gets a trial or story. Hot gets a call from a person.</p></div>
+    <div class="card"><span class="tag">Judge on accounts</span><p>Clicks are nice, but the ABM question is: did target accounts engage more, and did meetings follow?</p></div>
+  </div>
+  <div class="eg">You already did this for real. Your <a href="https://durvathakkar.com/limina/ads/" target="_blank" rel="noopener">Limina LinkedIn ads audit</a> reads all 15 of their ads, scores each one and rewrites six. Read it again with this section in mind.</div>
+  <h3>Homework: study real ads</h3>
+  <p>The LinkedIn Ad Library is public. Look up a company and read every ad it runs. Try <a href="https://www.linkedin.com/ad-library/search?accountOwner=limina" target="_blank" rel="noopener">Limina</a>, <a href="https://www.linkedin.com/ad-library/search?accountOwner=gong" target="_blank" rel="noopener">Gong</a> (famous for bold B2B ads), <a href="https://www.linkedin.com/ad-library/search?accountOwner=demandbase" target="_blank" rel="noopener">Demandbase</a> (an ABM company) and <a href="https://www.linkedin.com/ad-library/search?accountOwner=6sense" target="_blank" rel="noopener">6sense</a>. For each ad, write down three things: the hook, the offer and which layer it's for.</p>
+</section>
+
+<!-- 35 LINKEDIN POSTS -->
+<section id="liposts">
+  <h2><span class="n">35</span>LinkedIn posts to learn from</h2>
+  <p class="lead">The fastest way to learn B2B marketing is to follow the people who do it out loud. Follow these people, turn on the bell for two of them and read their posts for 10 minutes a day.</p>
+  <div class="people" id="people"></div>
+  <h3>Search posts by topic</h3>
+  <p>These links open LinkedIn post search (you need to be logged in). Sort by "Latest" or "Top match" and save the 3 best posts on each topic.</p>
+  <div class="links" id="postsearch"></div>
+  <h3>How to read a post like a marketer</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Line 1 (the hook)</span><p>Why did you stop? Was it a number, a strong opinion, a story or a question? Copy the <b>shape</b>, not the words.</p></div>
+    <div class="card"><span class="tag">The middle</span><p>Is it a list, a story or a before and after? Short lines? How fast does it get to the point?</p></div>
+    <div class="card"><span class="tag">The ending</span><p>What does it ask you to do: comment, read, follow? Is the ask small?</p></div>
+    <div class="card"><span class="tag">The comments</span><p>Who comments? If they're buyers, the post is working. If they're only other marketers, it's entertainment.</p></div>
+  </div>
+  <h3>Practice post (a model I wrote for you)</h3>
+  <div class="post">
+    <div class="ph"><span class="pav">DT</span><div><b>Durva Thakkar</b><small>Demand generation · B2B</small></div></div>
+    <div class="pt">Most ABM programs fail in week 3, not week 1.
+
+Week 1 is fun. You pick 25 dream accounts, launch the ads and send the boxes.
+
+Week 3 is where it breaks:
+• The box arrived, but sales didn't know.
+• The ad got a click, but nobody followed up.
+• Marketing counts leads, and sales counts meetings.
+
+The fix is boring and it works: one shared tracker, one 15-minute weekly check-in and one rule. Nothing gets sent to an account without the MDR knowing the date.
+
+What's the one ABM habit that made the biggest difference for your team?</div>
+  </div>
+  <p style="font-size:14px;color:var(--mute)">Why it works: line 1 is a surprising claim, the middle is 3 short real problems, the fix is simple and the end asks an easy question that experts like to answer.</p>
+</section>
+
+<!-- 36 VIDEOS -->
+<section id="watch">
+  <h2><span class="n">36</span>Videos to watch</h2>
+  <p class="lead">Picked from YouTube by topic and level. Start with the short <span class="lvl l1">BASICS</span> ones, then the <span class="lvl l2">DOING IT</span> tutorials, then the long <span class="lvl l3">PRO</span> talks (good on a walk or a commute). Tick each one when you've watched it.</p>
+  <div class="wprog"><span id="vdone">0</span> watched <div class="bar2"><i id="vbar"></i></div></div>
+  <div id="vids"></div>
+</section>
+
+<!-- 37 PLAN -->
+<section id="plan2">
+  <h2><span class="n">37</span>Your 2-week practice plan</h2>
+  <p>About 45 minutes a day. Tick as you go, and it saves.</p>
+  <div class="grid2" id="plan2list"></div>
+  <div class="say">"I learn by building. For ABM, I mapped one account's full journey, built the tracker, planned and shipped real direct mail to companies I wanted to work with, and audited Limina's LinkedIn ads ad by ad. I'd bring that same habit to the role: try it small, measure it, then scale what works."</div>
+</section>
+
 <footer>A personal study guide in plain English. Company facts come from public sources (Limina's website and news, Forum Ventures' website). Benchmarks are rough examples, not facts.</footer>
 </main>
 </div>
@@ -714,5 +1131,329 @@
   frender();
 })();
 </script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  let S = {}; try { S = JSON.parse(localStorage.getItem("dgLab") || "{}"); } catch (e) {}
+  const save = () => { try { localStorage.setItem("dgLab", JSON.stringify(S)); } catch (e) {} };
+
+  // ---------- 30 journey ----------
+  const ST = [
+    ["Target", "On your list. Nobody there has noticed you yet.", "\"Limina? Never heard of it.\"", "1:many LinkedIn ads to the company list, thought leader posts from Patricia, a helpful guide.", ["dg"], "Impressions and reach inside the account", "1 or more people engage (click, visit, follow)", "Northbay Bank goes on the list because it's a big Canadian bank building AI."],
+    ["Aware", "A few people have seen your ads or content.", "\"I've seen that name around. The Hope ad was clever.\"", "More ads, retargeting, a newsletter, an invite to a webinar.", ["dg"], "% of target accounts with 1+ engaged person", "3+ people engage, or 1 person does something high-intent (sandbox, pricing page)", "Marc, Head of Data Science, clicks the Hope ad."],
+    ["Engaged", "Several people are interacting, and the account is warming up.", "\"This might fix our AI privacy problem. Let me look closer.\"", "Personal email from the MDR, direct mail to the decision maker, a personal landing page, a roundtable invite.", ["dg", "mdr"], "Account score (fit + intent + engagement)", "Score reaches 70+, which makes it an MQA", "Marc tries the sandbox. The MDR emails him. You send Priya, the CISO, a box with a QR code."],
+    ["MQA", "Marketing-qualified account. It's time for sales to lead.", "\"OK, I'd talk to them.\"", "MDR outreach by phone, email and LinkedIn, using everything marketing learned.", ["mdr"], "MQA to meeting rate", "A first meeting is booked", "Priya scans the QR code. The MDR connects with her on LinkedIn the same day."],
+    ["Meeting", "A discovery call happens.", "\"Here's our problem. Can you really run inside our VPC?\"", "Follow-up kit: a one-pager for their industry, a case study, a technical doc.", ["mdr", "ae"], "Meetings held, show rate", "Real need confirmed, so an opportunity is created in the CRM", "The call is booked for Friday. The AE joins."],
+    ["Opportunity", "A real deal is in progress.", "\"I need to convince my CPO and procurement.\"", "Proof for every committee member: security docs for the CISO, Expert Determination details for privacy, a pricing summary for procurement. Maybe an exec dinner.", ["ae", "dg"], "Pipeline $ and win rate from target accounts", "Contract signed", "Sarah, the privacy officer, comes to the roundtable and hears a peer bank speak."],
+    ["Customer", "They bought. Now help them grow and tell the story.", "\"This works. Who else here could use it?\"", "Onboarding, a case study, expansion to other teams, an invite to speak on a webinar.", ["ae"], "Expansion revenue, case studies, referrals", "Becomes a reference or expands", "Northbay later speaks on your webinar, and that becomes proof for the next 25 banks."]
+  ];
+  const OWN = { dg: ["o-dg", "Demand gen (you)"], mdr: ["o-mdr", "MDR"], ae: ["o-ae", "Account exec"] };
+  function stage(i) {
+    $("stepper").querySelectorAll("button").forEach((b, k) => { b.classList.toggle("on", k === i); b.classList.toggle("past", k < i); });
+    const s = ST[i];
+    $("stagecard").innerHTML = `<div class="think">${s[2]}</div>
+      <div><h4>What it means</h4><p>${s[1]}</p></div>
+      <div><h4>Who owns it</h4><p>${s[4].map(o => `<span class="own ${OWN[o][0]}">${OWN[o][1]}</span>`).join("")}</p></div>
+      <div><h4>What you do</h4><p>${s[3]}</p></div>
+      <div><h4>What you measure</h4><p>${s[5]}</p></div>
+      <div><h4>Moves to the next stage when</h4><p>${s[6]}</p></div>
+      <div><h4>At Northbay Bank (practice)</h4><p>${s[7]}</p></div>`;
+  }
+  $("stepper").innerHTML = ST.map((s, i) => `<button><small>STAGE ${i + 1}</small>${s[0]}<i></i></button>`).join("");
+  $("stepper").querySelectorAll("button").forEach((b, i) => b.onclick = () => stage(i));
+  stage(0);
+
+  const L = [
+    ["LinkedIn ads", "d-ad", ["Company list ads start", "Marc clicks the Hope ad", "Retarget: case study", "", "Retarget: event", ""]],
+    ["Email", "d-em", ["", "MDR note to Marc", "", "Newsletter", "", "Recap after call"]],
+    ["Direct mail", "d-dm", ["", "", "Box to Priya (CISO)", "QR scanned: 2 min on page", "", ""]],
+    ["Events", "d-ev", ["", "", "", "", "Sarah registers for roundtable", ""]],
+    ["Sales (MDR/AE)", "d-sa", ["", "", "MDR calls Marc", "MDR connects with Priya", "", "Discovery call booked"]]
+  ];
+  $("lanes6").innerHTML = `<div class="lh">CHANNEL</div>` + [1, 2, 3, 4, 5, 6].map(w => `<div class="lh">WEEK ${w}</div>`).join("") +
+    L.map(r => `<div class="ln">${r[0]}</div>` + r[2].map(t => `<div>${t ? `<span class="dot ${r[1]}">${t}</span>` : ""}</div>`).join("")).join("");
+
+  // ---------- 31 spreadsheet ----------
+  const ACC = [
+    ["Northbay Bank", "Banking", 12000, 1, 45, 24, 14, "Engaged", "Durva + MDR", "Send direct mail to CISO"],
+    ["Maple Mutual Insurance", "Insurance", 4500, 1, 42, 18, 17, "MQA", "MDR", "Book discovery call"],
+    ["Lakeshore Health Network", "Health system", 9000, 1, 48, 27, 8, "Aware", "Durva", "Invite to roundtable"],
+    ["Atlas Payments", "Fintech (PCI)", 1400, 2, 38, 20, 15, "Meeting", "AE", "Demo on Thursday"],
+    ["Westgate Hospital", "Health system", 3100, 2, 41, 8, 11, "Engaged", "MDR", "Follow up on guide download"],
+    ["Crestline Pharma", "Pharma", 2200, 2, 40, 10, 6, "Aware", "Durva", "Add to pharma ad cluster"],
+    ["Polar Telecom", "Telecom", 7800, 2, 33, 15, 4, "Target", "Durva", "Find 3 contacts"],
+    ["Summit Claims AI", "Insurtech", 350, 3, 28, 12, 9, "Engaged", "Ads only", "Retarget with sandbox ad"],
+    ["Riverton Gov Services", "Public sector", 15000, 2, 36, 6, 1, "Target", "Durva", "Sovereignty event invite"],
+    ["Harbourline Credit Union", "Banking", 900, 3, 25, 5, 2, "Target", "Ads only", "1:many ads"]
+  ];
+  const band = v => v >= 70 ? "hi" : v >= 50 ? "md" : "lo";
+  const SCORE = [
+    ["Fit", "Industry matches ICP", 15, 15, "Bank, insurer, health, pharma = 15"],
+    ["Fit", "Size matches (1,000+ staff)", 10, 10, ""],
+    ["Fit", "Region (North America)", 5, 5, ""],
+    ["Fit", "Uses AI on sensitive data", 20, 15, "Public AI projects, job posts"],
+    ["Intent", "Researching our topic", 15, 12, "Intent data, G2, review sites"],
+    ["Intent", "Hiring AI / privacy roles", 10, 8, "Check their careers page"],
+    ["Intent", "News trigger", 5, 4, "Breach, new law, new CDO"],
+    ["Engage", "Ad clicks", 5, 4, ""],
+    ["Engage", "Website visits", 5, 4, ""],
+    ["Engage", "Content or sandbox use", 5, 4, ""],
+    ["Engage", "Replied or met", 5, 2, ""]
+  ];
+  const sv = SCORE.map((r, i) => (S.sc && S.sc[i] != null) ? S.sc[i] : r[3]);
+  const TABS = {
+    "Accounts": () => {
+      const rows = [[{ v: "Account" }, { v: "Industry" }, { v: "Employees" }, { v: "Tier" }, { v: "Fit /50" }, { v: "Intent /30" }, { v: "Engage /20" }, { v: "Score" }, { v: "Stage" }, { v: "Owner" }, { v: "Next step" }]];
+      ACC.sort((a, b) => (b[4] + b[5] + b[6]) - (a[4] + a[5] + a[6])).forEach((a, i) => {
+        const r = i + 2, sc = a[4] + a[5] + a[6];
+        rows.push([{ v: a[0] }, { v: a[1] }, { v: a[2].toLocaleString(), n: 1 }, { v: a[3], n: 1 }, { v: a[4], n: 1 }, { v: a[5], n: 1 }, { v: a[6], n: 1 }, { v: sc, n: 1, f: `=E${r}+F${r}+G${r}`, c: band(sc) }, { v: a[7] }, { v: a[8] }, { v: a[9] }]);
+      });
+      rows.push([{ v: "" }]);
+      rows.push([{ v: "Sorted by score. Green 70+ = MQA, amber 50 to 69 = nurture 1:few, grey under 50 = 1:many ads.", c: "note" }]);
+      return rows;
+    },
+    "Committee": () => [
+      ["Name", "Title", "Role in the deal", "What they care about", "Engagement", "Last touch"].map(v => ({ v })),
+      ...[["Priya Nair", "CISO", "Decision maker", "Risk, audit, fewer vendors", "Medium", "Direct mail delivered, QR scanned"],
+        ["Marc Leblanc", "Head of Data Science", "Champion", "Using data for AI without delays", "High", "Ran the sandbox"],
+        ["Sarah Cho", "Chief Privacy Officer", "Possible blocker", "Compliance, PIPEDA, re-identification risk", "Low", "Saw 3 ads, registered for roundtable"],
+        ["Daniel Okafor", "ML Engineer", "User", "Speed, API, docs, runs in our VPC", "High", "Read the docs twice"],
+        ["Lena Fischer", "Procurement Manager", "Gatekeeper", "Price, contract terms, security review", "None", "Not yet contacted"]].map(r => r.map(v => ({ v }))),
+      [{ v: "" }], [{ v: "Account: Northbay Bank (practice). Names are made up for learning.", c: "note" }]
+    ],
+    "Touches": () => [
+      ["Date", "Person", "Channel", "Touch", "Result", "Owner", "UTM content"].map(v => ({ v })),
+      ...[["Oct 1", "All", "LinkedIn ads", "Company list campaign starts", "312 impressions in week 1", "Durva", "abm-banks-hope-v1"],
+        ["Oct 6", "Marc", "LinkedIn ad", "Clicked the Hope ad", "Ran the sandbox", "Durva", "abm-banks-hope-v1"],
+        ["Oct 8", "Marc", "Email", "Personal note from MDR", "Replied: \"interesting\"", "MDR", ""],
+        ["Oct 13", "Priya", "Direct mail", "Box with field guide + QR", "Delivered Oct 15", "Durva", "dm-northbay-priya"],
+        ["Oct 16", "Priya", "QR scan", "Opened her personal page", "2 min on page", "Durva", "dm-northbay-priya"],
+        ["Oct 16", "Priya", "LinkedIn", "MDR connection request", "Accepted", "MDR", ""],
+        ["Oct 21", "Sarah", "Event", "Roundtable invite", "Registered", "Durva", "event-roundtable-nov"],
+        ["Oct 24", "Priya + Marc", "Call", "Discovery call booked", "Opportunity next", "AE", ""]].map(r => r.map(v => ({ v })))
+    ],
+    "Stages": () => [
+      ["Stage", "Meaning", "Moves on when", "Owner"].map(v => ({ v })),
+      ...ST.map(s => [s[0], s[1], s[6], s[4].map(o => OWN[o][1]).join(" + ")].map(v => ({ v })))
+    ],
+    "Score": () => {
+      const rows = [["Part", "Signal", "Max", "Points", "How to judge"].map(v => ({ v }))];
+      SCORE.forEach((r, i) => rows.push([{ v: r[0] }, { v: r[1] }, { v: r[2], n: 1 }, { inp: i, n: 1 }, { v: r[4], c: "note" }]));
+      const sum = (a, b) => sv.slice(a, b).reduce((x, y) => x + (+y || 0), 0);
+      const fit = sum(0, 4), it = sum(4, 7), en = sum(7, 11), tot = fit + it + en, n = SCORE.length + 1;
+      rows.push([{ v: "" }]);
+      rows.push([{ v: "Fit" }, { v: "subtotal" }, { v: 50, n: 1 }, { v: fit, n: 1, f: "=SUM(D2:D5)", id: "s_fit" }, { v: "" }]);
+      rows.push([{ v: "Intent" }, { v: "subtotal" }, { v: 30, n: 1 }, { v: it, n: 1, f: "=SUM(D6:D8)", id: "s_it" }, { v: "" }]);
+      rows.push([{ v: "Engage" }, { v: "subtotal" }, { v: 20, n: 1 }, { v: en, n: 1, f: "=SUM(D9:D12)", id: "s_en" }, { v: "" }]);
+      rows.push([{ v: "TOTAL" }, { v: "" }, { v: 100, n: 1 }, { v: tot, n: 1, f: `=D${n + 2}+D${n + 3}+D${n + 4}`, c: band(tot), id: "s_tot" },
+        { v: tot >= 70 ? "MQA: hand to the MDR" : tot >= 50 ? "Nurture with 1:few plays" : "Keep in 1:many ads", f: `=IF(D${n + 5}>=70,"MQA",IF(D${n + 5}>=50,"Nurture","1:many"))`, c: band(tot), id: "s_band" }]);
+      rows.push([{ v: "Type in the green cells (Points). The total updates. Try making Northbay drop below 70.", c: "note" }]);
+      return rows;
+    }
+  };
+  let tab = "Accounts";
+  const col = i => String.fromCharCode(65 + i);
+  function drawSheet() {
+    const rows = TABS[tab](), w = Math.max(...rows.map(r => r.length));
+    let h = `<table><thead><tr><th></th>${Array.from({ length: w }, (_, i) => `<th>${col(i)}</th>`).join("")}</tr></thead><tbody>`;
+    rows.forEach((r, ri) => {
+      h += `<tr class="${ri === 0 ? "hdr" : ""}"><td class="rn">${ri + 1}</td>`;
+      for (let ci = 0; ci < w; ci++) {
+        const c = r[ci] || { v: "" }, ref = col(ci) + (ri + 1);
+        const v = c.inp != null ? `<input type="number" min="0" max="${SCORE[c.inp][2]}" value="${sv[c.inp]}" data-i="${c.inp}">` : (c.v ?? "");
+        h += `<td data-ref="${ref}" data-f="${(c.f || "").replace(/"/g, "&quot;")}" class="${c.n ? "num " : ""}${c.c || ""}"${c.c === "note" && ci === 0 ? ` colspan="${w}"` : ""}>${v}</td>`;
+        if (c.c === "note" && ci === 0) break;
+      }
+      h += "</tr>";
+    });
+    $("xlgrid").innerHTML = h + "</tbody></table>";
+    $("xltabs").innerHTML = Object.keys(TABS).map(t => `<button class="${t === tab ? "on" : ""}">${t}</button>`).join("");
+    $("xltabs").querySelectorAll("button").forEach(b => b.onclick = () => { tab = b.textContent; drawSheet(); pick($("xlgrid").querySelector("td[data-ref='A1']")); });
+    $("xlgrid").querySelectorAll("input").forEach(inp => inp.oninput = () => {
+      sv[inp.dataset.i] = Math.max(0, Math.min(+inp.max, +inp.value || 0)); S.sc = sv; save();
+      const pos = inp.selectionStart; const i = inp.dataset.i; drawSheet();
+      const n = $("xlgrid").querySelector(`input[data-i="${i}"]`); n.focus(); try { n.setSelectionRange(pos, pos); } catch (e) {}
+      pick(n.closest("td"));
+    });
+  }
+  function pick(td) {
+    if (!td) return;
+    $("xlgrid").querySelectorAll(".sel").forEach(x => x.classList.remove("sel"));
+    td.classList.add("sel");
+    $("xlref").textContent = td.dataset.ref;
+    const inp = td.querySelector("input");
+    $("xlval").textContent = td.dataset.f || (inp ? inp.value : td.textContent);
+  }
+  $("xlgrid").addEventListener("click", e => { const td = e.target.closest("td[data-ref]"); if (td) pick(td); });
+  drawSheet(); pick($("xlgrid").querySelector("td[data-ref='H2']"));
+
+  // ---------- 32 worksheets ----------
+  document.querySelectorAll(".ws .wsh").forEach(h => h.addEventListener("click", e => { if (e.target.closest(".done")) return; h.parentElement.classList.toggle("open"); }));
+  S.done = S.done || {};
+  function prog() {
+    const n = Object.values(S.done).filter(Boolean).length;
+    $("wsdone").textContent = n; $("wsbar").style.width = (n / 8 * 100) + "%";
+    document.querySelectorAll(".ws").forEach(w => w.classList.toggle("isdone", !!S.done[w.dataset.ws]));
+  }
+  document.querySelectorAll("[data-done]").forEach(c => { c.checked = !!S.done[c.dataset.done]; c.onchange = () => { S.done[c.dataset.done] = c.checked; save(); prog(); }; });
+  prog();
+  S.f = S.f || {};
+  const words = s => (s.trim().match(/\S+/g) || []).length;
+  function counters() {
+    document.querySelectorAll(".cnt").forEach(c => {
+      const v = S.f[c.dataset.cnt] || "", max = +c.dataset.max, n = c.dataset.unit === "w" ? words(v) : v.length;
+      c.textContent = `${n} / ${max}${c.dataset.unit === "w" ? " words" : ""}`; c.classList.toggle("over", n > max);
+    });
+  }
+  function live() {
+    const g = k => (S.f[k] || "").trim();
+    const any = ["icp_ind", "icp_size", "icp_reg", "icp_trig", "icp_pain", "icp_who"].some(g);
+    $("icpout").innerHTML = any ? `"Our best customers are <b>${g("icp_ind") || "___"}</b> with <b>${g("icp_size") || "___"}</b> in <b>${g("icp_reg") || "___"}</b> that are <b>${g("icp_trig") || "___"}</b>. Their pain: <b>${g("icp_pain") || "___"}</b>. The people who feel it most: <b>${g("icp_who") || "___"}</b>."` : "";
+    const L2 = { cold: "Cold layer: offer something free and instant (sandbox, guide, a tool). Don't ask for a demo yet.", warm: "Warm layer: they know you. Offer proof (customer story) or a free trial.", hot: "Hot layer: a person-to-person ask works now, like a 30-min call with an engineer, no deck." };
+    $("adtip").textContent = L2[S.f.ad_layer || "cold"];
+    const u = g("u_url"); const p = [["utm_source", "u_src"], ["utm_medium", "u_med"], ["utm_campaign", "u_camp"], ["utm_content", "u_cont"]].filter(x => g(x[1])).map(x => x[0] + "=" + encodeURIComponent(g(x[1]).toLowerCase().replace(/\s+/g, "-")));
+    $("utmout").textContent = u ? u + (p.length ? (u.includes("?") ? "&" : "?") + p.join("&") : "") : "";
+    counters();
+  }
+  document.querySelectorAll("[data-k]").forEach(el => {
+    if (S.f[el.dataset.k] != null) el.value = S.f[el.dataset.k];
+    el.addEventListener("input", () => { S.f[el.dataset.k] = el.value; save(); live(); });
+  });
+  live();
+  $("utmcopy").onclick = () => { const t = $("utmout").textContent; if (t && navigator.clipboard) navigator.clipboard.writeText(t).then(() => { $("utmcopy").textContent = "Copied ✓"; setTimeout(() => $("utmcopy").textContent = "Copy link", 1500); }); };
+  // saved checklists
+  S.ck = S.ck || {};
+  document.querySelectorAll(".ws .check input").forEach((c, i) => { c.checked = !!S.ck[i]; c.onchange = () => { S.ck[i] = c.checked; save(); }; });
+
+  function selQ(box, items, opts, key) {
+    $(box).innerHTML = items.map((q, i) => `<div class="q"><div>${q[0]}</div><select data-q="${key}${i}"><option value="">Pick one...</option>${opts.map(o => `<option${S.f[key + i] === o ? " selected" : ""}>${o}</option>`).join("")}</select><div class="ex">${q[2]}</div></div>`).join("");
+    $(box).querySelectorAll("select").forEach(s => s.onchange = () => { S.f[s.dataset.q] = s.value; save(); });
+  }
+  function checkQ(box, items, res) {
+    let ok = 0; $(box).querySelectorAll(".q").forEach((d, i) => { const v = d.querySelector("select").value; const r = v === items[i][1]; ok += r; d.classList.toggle("right", r); d.classList.toggle("wrong", !r); if (!r) d.querySelector(".ex").innerHTML = `<b>Answer: ${items[i][1]}.</b> ${items[i][2]}`; });
+    $(res).innerHTML = `<b>${ok} / ${items.length}</b> ${ok === items.length ? "Perfect. 🎉" : "Read the notes under each one, then try again."}`;
+  }
+  const TQ = [
+    ["A Canadian bank with 20,000 staff, building AI, that has already spoken with the MDR twice.", "1:1", "Huge deal size and already warm. Worth a fully custom plan: personal page, direct mail, exec outreach."],
+    ["40 US regional health systems with similar size and similar problems.", "1:few", "Same pains, so one cluster message ('for regional health systems') works for all 40."],
+    ["800 mid-size insurers across North America that loosely match the ICP.", "1:many", "Too many to personalise. Targeted LinkedIn ads and good content do the work."],
+    ["A pharma giant whose Head of Data Science just posted about putting clinical notes into RAG.", "1:1", "A perfect-fit company with a live trigger from a named person. Act now, personally."],
+    ["12 Canadian credit unions.", "1:few", "A small, similar group. One tailored story (for example, a peer credit union's results) fits all."],
+    ["Any company with 500+ staff that visited the pricing page this month.", "1:many", "A programmatic rule, not a hand-picked list. Retargeting ads plus an MDR check on the best-fit ones."]
+  ];
+  selQ("tierq", TQ, ["1:1", "1:few", "1:many"], "t");
+  $("tiercheck").onclick = () => checkQ("tierq", TQ, "tierres");
+  const BQ = [
+    ["<b>Priya Nair</b>, CISO: signs off on any new security tool.", "Decision maker", "She holds the budget and the final yes for security tools."],
+    ["<b>Marc Leblanc</b>, Head of Data Science: wants AI projects to stop getting stuck.", "Champion", "He feels the pain most and will push for it inside the bank."],
+    ["<b>Sarah Cho</b>, Chief Privacy Officer: worried about re-identification risk.", "Blocker", "If her concerns aren't answered, she can stop the deal. Win her with proof (Expert Determination, VPC)."],
+    ["<b>Daniel Okafor</b>, ML Engineer: will use the API every day.", "User", "He judges it on docs, speed and how easy it is to deploy."],
+    ["<b>Lena Fischer</b>, Procurement: runs the vendor process.", "Gatekeeper", "She controls the steps (security review, contract), not the decision."]
+  ];
+  selQ("bcq", BQ, ["Decision maker", "Champion", "Blocker", "User", "Gatekeeper"], "b");
+  $("bccheck").onclick = () => checkQ("bcq", BQ, "bcres");
+
+  const QZ = [
+    ["ABM success is mainly measured by...", ["Number of leads", "Engagement and pipeline from target accounts", "Follower growth"], 1, "ABM counts accounts, not leads."],
+    ["MQA stands for...", ["Marketing-qualified account", "Most qualified audience", "Monthly quota attainment"], 0, "The account-level version of an MQL."],
+    ["A 1:1 account gets...", ["The same ads as everyone", "A fully custom plan", "Only email"], 1, "1:1 is reserved for the few biggest-fit accounts."],
+    ["Intent data tells you...", ["Who is researching your topic right now", "Who your customers are", "Your website speed"], 0, "It shows which companies are reading about a topic this month."],
+    ["LinkedIn needs a matched audience of at least... before an ad can run", ["50", "300", "10,000"], 1, "300 members. Tiny 1:1 lists often need grouping."],
+    ["Best CTA for a cold audience:", ["Book a demo", "A free tool or guide", "Buy now"], 1, "Cold people aren't shopping yet (95:5), so give value first."],
+    ["The QR code on direct mail should go to...", ["The homepage", "A personal page with a UTM", "The careers page"], 1, "Personal, and trackable."],
+    ["After a gift is delivered, who usually follows up?", ["Nobody", "The MDR, the same day or the day after", "The CEO, a month later"], 1, "Delivery day is the warmest moment."],
+    ["The 95:5 rule says...", ["95% of ads fail", "About 5% of buyers are in market right now", "Spend 5% on ads"], 1, "Most buyers aren't shopping today, so stay memorable for later."],
+    ["The UTM medium for a paid LinkedIn ad is usually...", ["paid-social", "linkedin", "q1-campaign"], 0, "Source = linkedin, medium = paid-social, campaign = the campaign name."]
+  ];
+  $("quiz").innerHTML = QZ.map((q, i) => `<div class="mc"><p>${i + 1}. ${q[0]}</p>${q[1].map((o, k) => `<label><input type="radio" name="qz${i}" value="${k}"${S.f["qz" + i] == k ? " checked" : ""}> ${o}</label>`).join("")}<div class="ex">${q[3]}</div></div>`).join("");
+  $("quiz").querySelectorAll("input").forEach(r => r.onchange = () => { S.f[r.name] = r.value; save(); });
+  $("quizcheck").onclick = () => { let ok = 0; $("quiz").querySelectorAll(".mc").forEach((d, i) => { const c = d.querySelector("input:checked"); const r = c && +c.value === QZ[i][2]; ok += !!r; d.classList.toggle("right", !!r); d.classList.toggle("wrong", !r); }); $("quizres").innerHTML = `<b>${ok} / 10</b> ${ok >= 9 ? "Pro level. 🎉" : ok >= 7 ? "Nearly there." : "Re-read sections 11 and 30, then try again."}`; };
+
+  // ---------- 35 people ----------
+  const P = [
+    ["Tyler Munro", "VP Marketing at Limina", "Your future boss. Read everything he posts: it tells you what he cares about and how he talks."],
+    ["Patricia Thaine", "Co-founder and CEO of Limina", "Limina's main voice on privacy and AI. Her posts are the topics your campaigns will support."],
+    ["Dave Gerhardt", "Founder of Exit Five, former CMO at Drift", "B2B marketing in plain words: brand, content, being a marketing team of one."],
+    ["Sangram Vajre", "Co-founder of Terminus, author on ABM and go-to-market", "One of the people who made ABM popular. Good for the big picture."],
+    ["AJ Wilcox", "Founder of B2Linked, LinkedIn ads specialist", "Deep, practical LinkedIn ads advice: costs, targeting, formats."],
+    ["Chris Walker", "B2B go-to-market voice, founder of Refine Labs", "Strong opinions on demand creation vs lead capture. Read with a critical eye."],
+    ["Kaylee Edmondson", "B2B demand gen leader", "Real demand gen programs, paid and ABM, from someone who runs them."],
+    ["Amanda Natividad", "Marketer known for 'zero-click content'", "How to write posts that give value right in the feed, without asking for a click."]
+  ];
+  const srch = q => "https://www.linkedin.com/search/results/people/?keywords=" + encodeURIComponent(q);
+  $("people").innerHTML = P.map(p => `<div class="person"><b>${p[0]}</b><small>${p[1]}</small><p>${p[2]}</p><a href="${srch(p[0])}" target="_blank" rel="noopener">Find on LinkedIn →</a></div>`).join("");
+  $("postsearch").innerHTML = ["account based marketing", "ABM direct mail", "LinkedIn ads B2B", "thought leader ads", "demand generation", "B2B webinar", "buying committee", "intent data", "data privacy AI"].map(t => `<a href="https://www.linkedin.com/search/results/content/?keywords=${encodeURIComponent(t)}" target="_blank" rel="noopener">${t}</a>`).join("");
+
+  // ---------- 36 videos ----------
+  const V = [
+    ["ABM basics", [
+      ["QJjNoqAgaQE", "MakingSense of ABM", "6sense", "6:34", 1, "A clear, animated intro to the whole idea of ABM. Start here."],
+      ["4xE2skvfl94", "Account-Based Marketing explained in 6 minutes (and 29 seconds)", "WebFX", "6:31", 1, "The same basics from another angle, to make them stick."],
+      ["Jx0muHw5NUY", "What is Account Based Marketing? How to set up for your B2B business", "Senator We Run Ads", "14:07", 1, "The most-watched ABM explainer. Practical setup steps."],
+      ["BakYEAFPqNs", "MakingSense of Intent Data", "6sense", "4:14", 1, "What intent data is and how teams use it to pick accounts."],
+      ["Wff1ZORTIJs", "Simple 8 Step B2B Demand Generation Strategy", "Directive", "7:34", 1, "Where ABM fits inside a full demand gen strategy."]
+    ]],
+    ["Buying committees + HubSpot", [
+      ["Byq1A___oK0", "How to Map and Target the Enterprise B2B Buying Committee", "Dylan Conroy", "11:01", 2, "Goes with worksheet W3."],
+      ["j24Lqwjl68U", "How to Build an Effective ABM Strategy in HubSpot", "The Gist", "6:58", 2, "Limina's job post asks for HubSpot. This shows the ABM tools inside it."],
+      ["Gxz6UgGUvIQ", "How to Configure HubSpot for ABM", "New Breed", "29:41", 2, "Deeper setup: target accounts, tiers, buying roles in the CRM."],
+      ["eZs-KfVTm14", "UTM Parameters and Tracking Explained in 100 Seconds", "MeasureSchool", "2:00", 1, "Goes with worksheet W6."]
+    ]],
+    ["LinkedIn ads for ABM", [
+      ["Dzusu89d1R8", "ABM on LinkedIn: Company List Ads, Step by Step", "Viren Baid", "12:45", 2, "A click-by-click Campaign Manager tutorial for company lists."],
+      ["OqdXhRy5QNY", "How to Use LinkedIn for Account-Based Marketing (Complete ABM Guide)", "Prospeo", "9:45", 2, "Ads plus organic plus outreach, all aimed at the same accounts."],
+      ["fDz1d4OK648", "How to Implement an ABM Strategy with LinkedIn Ads", "Impactable", "25:06", 3, "An agency's full ABM ads system: layers, retargeting, budgets."],
+      ["GsXCstjm3no", "ABM on LinkedIn: The Step-by-Step Strategy We Use With Clients", "LinkedIn Ads Insider", "23:41", 3, "Another agency playbook. Compare it with Impactable's."],
+      ["_UVFFTAkAAo", "LinkedIn Thought Leader Ads: Full Step-by-Step Guide", "Anthony Blatner, Speedwork", "13:05", 2, "How to boost a person's post, like the Patricia idea in your audit."],
+      ["eFSMGI_UK38", "LinkedIn Thought Leader Ads: Full Step-by-Step Tutorial (2026)", "Adam Holmgren", "13:02", 2, "The newest version of the setup."]
+    ]],
+    ["Direct mail + gifting", [
+      ["2xfc4FJ7Eww", "Direct Mail Marketing for B2B Leads: The Omnichannel Power Move", "Abstrakt Marketing Group", "2:29", 1, "Why mail works best together with other channels."],
+      ["Xqi_2RvU_XM", "Why Thoughtful Gifting Beats Expensive Swag in B2B Marketing", "Reachdesk", "3:05", 1, "The idea beats the price. Exactly your passport approach."],
+      ["o1vY7U7yjSM", "How ABM Teams Use Gifting to Influence Buying Committees", "Reachdesk", "3:49", 2, "Gifting to several people at one account."],
+      ["jukH3pf19vo", "Boost Your B2B Sales with Direct Mail and Gifting (Kris Rudeegraap of Sendoso)", "Millennium Agency", "12:41", 2, "The founder of Sendoso on how direct mail fits in sales."]
+    ]],
+    ["Personal pages at scale", [
+      ["DZQ3Dy-fTBs", "How to Build Personalized ABM Landing Pages in 30 Min (Webflow, Clay, Zapier)", "QBack", "29:23", 3, "How teams make a personal page for every account automatically. Like your Limina ABM page, at scale."]
+    ]],
+    ["Pro talks (Exit Five, long, good for a walk)", [
+      ["uWRminjpXsE", "What is Account Based Marketing? (Full Guide to ABM)", "Exit Five", "1:00:41", 3, "The deepest, most current ABM talk on this list."],
+      ["q_PvrQsWu-E", "ABM: What Ramp, Snowflake, and Hightouch are doing", "Exit Five", "51:52", 3, "How three famous B2B companies run ABM today."],
+      ["QTg-0Uz7uUM", "The B2B Event Playbook: Building Revenue-Driving Events", "Exit Five", "55:45", 3, "Events that create pipeline, not just badges."],
+      ["Pp5yp8GV6P4", "How to Win with Webinars: 5 B2B marketers share their best webinar play", "Exit Five", "47:02", 3, "Webinars are in your job post. Five real playbooks."],
+      ["mnJL8lWJS5Y", "How to Crush Email Marketing in B2B", "Exit Five", "52:55", 3, "Email programs, also in your job post."]
+    ]]
+  ];
+  S.v = S.v || {};
+  const LV = { 1: ["l1", "BASICS"], 2: ["l2", "DOING IT"], 3: ["l3", "PRO"] };
+  const total = V.reduce((n, g) => n + g[1].length, 0);
+  function vprog() { const n = Object.values(S.v).filter(Boolean).length; $("vdone").textContent = `${n} of ${total}`; $("vbar").style.width = (n / total * 100) + "%"; }
+  $("vids").innerHTML = V.map(g => `<div class="vgrp"><h3>${g[0]}</h3><div class="vids">${g[1].map(v => `<div class="vid${S.v[v[0]] ? " seen" : ""}" id="v_${v[0]}"><a class="th" href="https://www.youtube.com/watch?v=${v[0]}" target="_blank" rel="noopener" style="background-image:url(https://i.ytimg.com/vi/${v[0]}/mqdefault.jpg)"><span>${v[3]}</span></a><div class="vb"><div><span class="lvl ${LV[v[4]][0]}">${LV[v[4]][1]}</span></div><div class="vt">${v[1]}</div><div class="vc">${v[2]}</div><div class="vw">${v[5]}</div><label><input type="checkbox" data-v="${v[0]}"${S.v[v[0]] ? " checked" : ""}> Watched</label></div></div>`).join("")}</div></div>`).join("");
+  $("vids").querySelectorAll("[data-v]").forEach(c => c.onchange = () => { S.v[c.dataset.v] = c.checked; $("v_" + c.dataset.v).classList.toggle("seen", c.checked); save(); vprog(); });
+  vprog();
+
+  // ---------- 37 plan ----------
+  const PL = [
+    "Read sections 11 and 30. Watch the 6sense and WebFX ABM videos.",
+    "Worksheet W1 (ICP). Watch Senator We Run Ads.",
+    "Open the tracker (31). Play with the Score tab. Worksheet W2.",
+    "Worksheet W3 (buying committee). Watch the buying committee video.",
+    "Read section 33 (direct mail). Watch the 3 short gifting videos.",
+    "Worksheet W4: plan one real direct mail send.",
+    "Rest day. Follow the 8 people in section 35.",
+    "Read section 34. Watch the company list ads tutorial.",
+    "Ad Library homework: Limina, Gong, Demandbase, 6sense.",
+    "Worksheet W5: write 3 ads, one per layer. Re-read your Limina ads audit.",
+    "Worksheet W6: build UTMs for all 3 ads. Watch the UTM video.",
+    "Worksheet W7 (1:1 email). Watch the HubSpot ABM video.",
+    "Exit Five's full guide to ABM, on a walk.",
+    "Worksheet W8 (quiz). Write one LinkedIn post using the model. Flashcards."
+  ];
+  S.p = S.p || {};
+  $("plan2list").innerHTML = PL.map((t, i) => `<div class="pday"><label><input type="checkbox" data-p="${i}"${S.p[i] ? " checked" : ""}><span><b>DAY ${i + 1}</b>${t}</span></label></div>`).join("");
+  $("plan2list").querySelectorAll("[data-p]").forEach(c => c.onchange = () => { S.p[c.dataset.p] = c.checked; save(); });
+})();
+</script>
+
 </body>
 </html>
