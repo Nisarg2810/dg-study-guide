@@ -227,6 +227,23 @@
   .vid .vw { font-size: 13.5px; line-height: 1.45; color: #333; }
   .vid label { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--mute); display: flex; gap: 6px; align-items: center; cursor: pointer; }
   .vid label input { accent-color: var(--green); }
+  .vid .vnb { margin-top: 6px; align-self: flex-start; background: #EEF2FF; color: #3730A3; border: 1px solid #C7D2FE; border-radius: 8px; padding: 6px 10px; font: 600 13px inherit; font-family: inherit; cursor: pointer; }
+  .vid .vnb:hover { background: #E0E7FF; }
+  .vnote { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; }
+  .vnote[hidden] { display: none; }
+  .vnote-bg { position: absolute; inset: 0; background: rgba(15,15,30,.55); }
+  .vnote-box { position: relative; background: #fff; border-radius: 16px; max-width: 680px; width: 100%; max-height: 88vh; overflow: auto; padding: 22px 24px 24px; box-shadow: 0 20px 60px rgba(0,0,0,.3); }
+  .vnote-x { position: absolute; top: 10px; right: 12px; border: 0; background: #F3F4F6; width: 34px; height: 34px; border-radius: 50%; font-size: 22px; line-height: 1; cursor: pointer; }
+  .vnote-k { font: 600 12px "JetBrains Mono", monospace; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; }
+  .vnote h3 { margin: 6px 40px 8px 0; font-size: 19px; line-height: 1.3; }
+  .vnote h4 { margin: 16px 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: .05em; color: var(--mute); }
+  .vnote-s { font-size: 15.5px; line-height: 1.55; margin: 0; }
+  .vnote ul, .vnote ol { margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.55; }
+  .vnote li { margin: 3px 0; }
+  .vnote .say { margin-top: 16px; }
+  .vnote-ts { display: flex; flex-wrap: wrap; gap: 6px; }
+  .vnote-ts a { font: 500 12.5px "JetBrains Mono", monospace; background: #F3F4F6; border-radius: 6px; padding: 4px 8px; text-decoration: none; color: inherit; }
+  .vnote-ts a:hover { background: #E5E7EB; }
   .pday { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
   .pday label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; font-size: 15px; line-height: 1.5; }
   .pday input { margin-top: 5px; accent-color: var(--green); width: 17px; height: 17px; flex-shrink: 0; }
@@ -988,7 +1005,7 @@ What's the one ABM habit that made the biggest difference for your team?</div>
 <!-- 36 VIDEOS -->
 <section id="watch">
   <h2><span class="n">36</span>Videos to watch</h2>
-  <p class="lead">Picked from YouTube by topic and level. Start with the short <span class="lvl l1">BASICS</span> ones, then the <span class="lvl l2">DOING IT</span> tutorials, then the long <span class="lvl l3">PRO</span> talks (good on a walk or a commute). Tick each one when you've watched it.</p>
+  <p class="lead">Picked from YouTube by topic and level. Start with the short <span class="lvl l1">BASICS</span> ones, then the <span class="lvl l2">DOING IT</span> tutorials, then the long <span class="lvl l3">PRO</span> talks (good on a walk or a commute). Tap <b>📝 Notes</b> on any video for a short summary, the key ideas, the steps, how it applies at Limina, and links that jump to the best moments. Tick each one when you've watched it.</p>
   <div class="wprog"><span id="vdone">0</span> watched <div class="bar2"><i id="vbar"></i></div></div>
   <div id="vids"></div>
 </section>
@@ -1428,8 +1445,201 @@ What's the one ABM habit that made the biggest difference for your team?</div>
   const LV = { 1: ["l1", "BASICS"], 2: ["l2", "DOING IT"], 3: ["l3", "PRO"] };
   const total = V.reduce((n, g) => n + g[1].length, 0);
   function vprog() { const n = Object.values(S.v).filter(Boolean).length; $("vdone").textContent = `${n} of ${total}`; $("vbar").style.width = (n / total * 100) + "%"; }
-  $("vids").innerHTML = V.map(g => `<div class="vgrp"><h3>${g[0]}</h3><div class="vids">${g[1].map(v => `<div class="vid${S.v[v[0]] ? " seen" : ""}" id="v_${v[0]}"><a class="th" href="https://www.youtube.com/watch?v=${v[0]}" target="_blank" rel="noopener" style="background-image:url(https://i.ytimg.com/vi/${v[0]}/mqdefault.jpg)"><span>${v[3]}</span></a><div class="vb"><div><span class="lvl ${LV[v[4]][0]}">${LV[v[4]][1]}</span></div><div class="vt">${v[1]}</div><div class="vc">${v[2]}</div><div class="vw">${v[5]}</div><label><input type="checkbox" data-v="${v[0]}"${S.v[v[0]] ? " checked" : ""}> Watched</label></div></div>`).join("")}</div></div>`).join("");
+  $("vids").innerHTML = V.map(g => `<div class="vgrp"><h3>${g[0]}</h3><div class="vids">${g[1].map(v => `<div class="vid${S.v[v[0]] ? " seen" : ""}" id="v_${v[0]}"><a class="th" href="https://www.youtube.com/watch?v=${v[0]}" target="_blank" rel="noopener" style="background-image:url(https://i.ytimg.com/vi/${v[0]}/mqdefault.jpg)"><span>${v[3]}</span></a><div class="vb"><div><span class="lvl ${LV[v[4]][0]}">${LV[v[4]][1]}</span></div><div class="vt">${v[1]}</div><div class="vc">${v[2]}</div><div class="vw">${v[5]}</div><button class="vnb" data-n="${v[0]}">📝 Notes: what it teaches</button><label><input type="checkbox" data-v="${v[0]}"${S.v[v[0]] ? " checked" : ""}> Watched</label></div></div>`).join("")}</div></div>`).join("");
   $("vids").querySelectorAll("[data-v]").forEach(c => c.onchange = () => { S.v[c.dataset.v] = c.checked; $("v_" + c.dataset.v).classList.toggle("seen", c.checked); save(); vprog(); });
+  // ---------- video notes (written from each video's transcript) ----------
+  const NOTES = {
+    "QJjNoqAgaQE": {
+      s: "A funny 6-minute intro from 6sense. ABM means sales and marketing pick a clear list of accounts and run personal campaigns for each one, instead of chasing random leads.",
+      k: ["Buyers stay hidden for most of their research (the \"dark funnel\"). Studies say they can do about 70% of the journey before talking to sales.", "A whole buying team decides, not one person. Each person needs a different message at a different time.", "Chasing form fills fills the pipeline with junk (his joke: trade show badge scans for squishy balls).", "His 5 steps: pick the best accounts, learn about them, engage the right way, work with sales, track real things.", "Picking accounts on gut feeling is risky. Intent data (what accounts research online) helps pick them."],
+      d: ["Pick accounts with data, not opinions.", "Map who is on the buying team.", "Send the right message to the right person at the right time.", "Alert sales when an account gets active.", "Report on accounts reached and pipeline, not leads."],
+      l: "At Limina the hidden research is real: a CISO reads about PII in RAG long before filling a form. ABM lets us reach that bank's whole team early.",
+      t: [[1, "The dark funnel"], [2, "The 5 steps"], [4, "AI and intent data"]]
+    },
+    "4xE2skvfl94": {
+      s: "WebFX explains ABM in plain words: you target specific companies you want to win, not a broad audience, and tailor the message to their pain.",
+      k: ["ABM = hyper-targeted campaigns aimed at named companies and the people inside them.", "Start by checking each company against your ideal customer profile: size, industry, location, budget, revenue.", "Then ask: what pain can we solve, how much budget per tactic, where are they in buying, which channels reach them.", "Channels named: LinkedIn, Google Ads, Microsoft Ads, email.", "Benefits: buyers like personal experiences, better ROI, sales and marketing agree, less wasted spend."],
+      d: ["Define the ICP.", "Pick the target accounts.", "Plan messages by pain point.", "Choose channels.", "Launch, measure, adjust."],
+      l: "For Limina the ICP is regulated companies (banks, insurers, health) with AI work on sensitive data. That's step 1 of this video.",
+      t: [[1, "How to build an ABM strategy"], [2, "4 benefits"]]
+    },
+    "Jx0muHw5NUY": {
+      s: "An agency marketer shows 4 steps to run ABM with LinkedIn ads, and why LinkedIn is the best channel to start ABM.",
+      k: ["Step 1: build the company list with sales. They usually already have one.", "Step 2: pick job roles inside those companies. Target decision makers AND decision influencers (the people the boss asks for advice).", "Step 3: three content types work best in B2B: customer testimonials, what makes you different, and how easy it is to switch.", "Step 4: report on the long cycle: accounts reached, demos, contracts. Also watch engagement (traffic, pages per visit, video views), not only form fills.", "Bought contact lists go stale fast. LinkedIn data updates itself when people change jobs.", "His rule of thumb: about 25% of a B2B media budget can go to ABM, but only if the deal size is big."],
+      d: ["Get the account list from sales.", "Add it in Campaign Manager under company names.", "Add job functions or titles.", "Write testimonial, difference and easy-switch ads.", "Report with sales on demos and contracts."],
+      l: "Influencers matter a lot at Limina: the AI engineer may tell the CISO which redaction tool is good. Target them too.",
+      t: [[3, "Step 1: the company list"], [5, "Step 2: job roles"], [7, "Step 3: what ads to make"], [8, "Step 4: reporting"], [10, "Why LinkedIn"]]
+    },
+    "BakYEAFPqNs": {
+      s: "6sense explains intent data in 4 minutes: the signals buyers leave while researching, and how to use them.",
+      k: ["Intent data = research activity across the web that shows a company may be looking to buy.", "Known data: forms, webinars, downloads. Unknown data: anonymous research.", "First-party data: activity on YOUR site. Third-party data: activity on other sites, usually bought from a vendor.", "Most research happens on sites that are not yours.", "Tools like 6sense track keywords; when accounts research them, you see it and can tailor ads and content."],
+      d: ["List keywords your buyers search (for Limina: PII redaction, HIPAA AI, data de-identification).", "Watch which accounts research them.", "Move those accounts up a tier and tell the MDR."],
+      l: "Limina keywords to watch: \"PII in LLM\", \"de-identification\", \"HIPAA AI\", \"RAG data privacy\". An insurer researching these is warming up.",
+      t: [[1, "Known vs unknown"], [2, "First vs third party"]]
+    },
+    "Wff1ZORTIJs": {
+      s: "Directive shares an 8-step play: build a data report about your target accounts, then use it for 1:1 outreach and wider promotion.",
+      k: ["Build a tight list that matches your ICP (they used Series C funded companies).", "Pick one data point to compare them all on (they used website domain authority).", "Find 2 contacts per company: the person who owns that data, and the decision maker.", "Put the data in one sheet, then make it a nice PDF and a blog post with findings.", "Email both contacts plus CC the sales rep: \"We compared you with your peers, here are 2 recommendations, can we walk you through them?\"", "Then promote the report with ads to everyone else in the ICP."],
+      d: ["List accounts.", "Choose a data point.", "Find 2 contacts each.", "Build the data set.", "Design a PDF.", "Write the blog.", "Send personal outreach.", "Promote with ads."],
+      l: "Limina version: a short \"How regulated teams govern sensitive data in AI\" benchmark. Each tier 1 account gets its own comparison. That's the peer benchmark play on your plan page.",
+      t: [[1, "Data point idea"], [3, "Gathering contacts"], [5, "The outreach email"], [6, "Promotion"]]
+    },
+    "Byq1A___oK0": {
+      s: "This is a short podcast chat at Cannes with the CEO of NewtonX, a B2B research company. The main lesson: a buying committee decides, and any one person can kill the deal.",
+      k: ["In B2B it is always a committee, never one person, even if you target the most senior one.", "Example: the CMO owns budget, but the CTO owns integration. If the CTO isn't brought along, the deal dies.", "Surprise: sometimes procurement, with a small role, derails the deal because their goal is price, not features.", "Some \"dream audiences\" don't exist (like super-technical CMOs). You need a mix of roles.", "B2B marketers don't use research enough. Ask buyers before you launch creative."],
+      d: ["List every role in the committee.", "Write what each one cares about.", "Plan a message for the blocker (often procurement or security), not just the champion."],
+      l: "At Limina the CISO is the likely blocker (\"where does data go?\") and procurement asks \"why not our DIY scripts?\". Have proof ready for both.",
+      t: [[4, "Any one person can derail the deal"], [5, "The procurement surprise"]]
+    },
+    "j24Lqwjl68U": {
+      s: "Shows how to use HubSpot's Target Accounts tool smartly: workflows that flag target accounts and tiers automatically, and remind reps to follow up.",
+      k: ["The Target Accounts dashboard shows contacts, open deals, last touch and website views per account.", "Don't flag accounts by hand. Build a workflow: if a company matches your criteria, set Target Account = true.", "Branch the workflow to set Tier 1, 2 or 3 (for example by size or by which competitor they use).", "A second workflow reminds the owner: Tier 1 untouched for 30 days, Tier 2 for 60, Tier 3 for 90.", "Add email templates, sequences, a report by tier, and LinkedIn ads to the same accounts."],
+      d: ["Turn on Target Accounts.", "Build the \"set target account + tier\" workflow.", "Build the \"follow-up due\" reminder workflow.", "Add a dashboard for weekly sales meetings."],
+      l: "This is exactly how Limina's tier 1/2/3 list could live in HubSpot, with the MDR getting reminders automatically.",
+      t: [[2, "The tiering workflow"], [4, "Follow-up reminders"]]
+    },
+    "Gxz6UgGUvIQ": {
+      s: "A HubSpot partner webinar on 3 problems that break ABM (weak ICP, tools that don't connect, generic content) and how to fix each inside HubSpot.",
+      k: ["Weak ICP: look at your best customers' data: who booked the meeting, who signed, shortest cycle. Ask customers why they bought. Ask sales AND customer success.", "Put the ICP into HubSpot: the built-in Ideal Customer Profile Tier property (max 3 tiers), company lists per tier, contact lists for buying roles.", "Workflows set the tier and target account flag automatically, then route to sales.", "Keep the tech stack simple. Have a plan before buying tools (they mention RollWorks and 6sense).", "Smart content: one email with smart rules shows different text, images and buttons to each tier.", "Account scoring rolls up engagement from the whole buying committee."],
+      d: ["Find your ICP from data.", "Create 3 tier lists + buying-role lists.", "Automate tiers with workflows.", "Use smart rules for personal emails.", "Track account-level scores."],
+      l: "Limina buying roles to build as contact lists: privacy lead, CISO, head of data/AI, procurement.",
+      t: [[5, "Shaky ICP"], [9, "Setting tiers in HubSpot"], [16, "Tech stack"], [20, "Smart content emails"], [24, "Account scoring"]]
+    },
+    "eZs-KfVTm14": {
+      s: "In 100 seconds: UTM tags tell Google Analytics where a visitor came from, especially from email, where the source is otherwise lost.",
+      k: ["The text after the ? in a link is the query string.", "Clicks from email apps often show as \"direct\" traffic because there's no referrer.", "Add UTM tags (source, medium, campaign) to links you control so the visit goes in the right bucket."],
+      d: ["Tag every email, ad and social link.", "Keep one naming sheet so the team tags the same way."],
+      l: "Every Limina webinar invite and ad link should carry UTMs, or HubSpot can't credit the campaign. Try worksheet W6.",
+      t: [[0, "Why you need UTMs"]]
+    },
+    "Dzusu89d1R8": {
+      s: "A click-by-click LinkedIn Campaign Manager tutorial: upload a company list, then narrow by job function and seniority.",
+      k: ["Go to Plan > Audiences > Matched audience > Company list.", "Use LinkedIn's template. Company name alone works; adding website and LinkedIn URL improves the match.", "Rules: at least 300 companies, up to 300,000. Processing takes 24 to 48 hours.", "Expect some names not to match. Plan a longer list.", "In the campaign, add the list, then narrow by job function (e.g. marketing) and seniority. Exclude functions you don't want (sales, HR).", "He turns off audience expansion and the LinkedIn Audience Network, and starts bids at the low end of the suggested range."],
+      d: ["Download the template.", "Fill name, website, LinkedIn URL.", "Upload the CSV.", "Wait 1 to 2 days.", "Build the campaign with the list + job filters.", "Turn off expansion and Audience Network."],
+      l: "Limina's tier 1+2 list is only 50 accounts, so it needs to be grouped with tier 3 to reach 300 companies for LinkedIn.",
+      t: [[1, "Matched audiences"], [3, "The 300 company rule"], [6, "Narrowing by role"]]
+    },
+    "OqdXhRy5QNY": {
+      s: "A full LinkedIn ABM system: ICP, 3 tiers, Sales Navigator lists, outreach messages, automation, and ads that warm people up.",
+      k: ["Define the ICP from patterns in your best customers.", "Tier 1 = dream accounts with deep personal work. Tier 2 = core mid-market. Tier 3 = smaller, mostly automated.", "In Sales Navigator, save account lists per tier, then search leads inside them.", "Reach out bottom-up: talk to a senior manager first, then mention that conversation to the VP.", "Use signals (new hires, funding, leadership changes) for timing.", "RABBIT message framework: Reason, Ask a question, Back it up with data, Tease the solution.", "Ads in 3 types: warm-up (before outreach), cover (during), wake-up (re-engage the quiet ones)."],
+      d: ["Build tier lists.", "Find decision makers.", "Write RABBIT messages.", "Run warm-up ads first.", "Then outreach + cover ads.", "Wake-up ads for no-replies."],
+      l: "Warm-up ads before the MDR reaches out means the CPO has already seen Limina 5 times when the message lands.",
+      t: [[0, "ICP and tiers"], [1, "Sales Navigator lists"], [4, "Bottom-up outreach"], [5, "The RABBIT message"], [7, "Warm-up, cover, wake-up ads"]]
+    },
+    "fDz1d4OK648": {
+      s: "An agency's view on ABM with LinkedIn ads: company lists beat contact lists, don't skip retargeting, and match budget to list size.",
+      k: ["Contact lists decay 20 to 30% a year as people change jobs. Company lists + job filters stay up to date.", "LinkedIn's own filters (industry, size, titles) can build \"unnamed\" ABM audiences of look-alike companies.", "Biggest mistake: no retargeting. Big accounts need more trust and longer cycles.", "Retargeting content: case studies, client results, experts from your team.", "Second mistake: too much budget on a tiny list. $200/day on 1,000 people works for a month, then dies. Use $10 to $15/day and \"slow burn\" it for months.", "Target the whole buying committee, not just 2 decision makers. Juniors can become champions."],
+      d: ["Upload a company list.", "Add role filters.", "Retarget engaged people from that list.", "Budget in proportion to list size.", "Push people to your newsletter or podcast for long nurture."],
+      l: "For Limina's small tier 1 list: low daily budget, long run, and retarget with case studies like Boehringer Ingelheim.",
+      t: [[1, "Company vs contact lists"], [6, "Retargeting ABM lists"], [15, "Top 4 mistakes"], [18, "Best practices"]]
+    },
+    "GsXCstjm3no": {
+      s: "Two LinkedIn ads experts explain ABM step by step: strategy, list, messaging guide, media plan, creative, and how to measure.",
+      k: ["ABM is good marketing aimed at a defined list. Three types: 1:1 (few accounts), 1:few (up to ~100), 1:many (thousands).", "LinkedIn's industry targeting is often wrong (pages set up years ago by a junior), so upload your own list.", "Aim for at least 50% audience penetration: reach enough of the list, often enough.", "Build lists with sales, Sales Navigator, or Clay (it has a look-alike builder from your best 10 customers).", "Write one messaging doc per campaign: who, their goals, what's in the way, how we help, proof.", "Video structure: pain, why it matters, payoff. Say the job title in the ad (\"Demand gen managers, tired of X?\").", "Measure: reach, engagement, and how many target companies show at least medium engagement."],
+      d: ["Strategy.", "Build the list.", "Messaging doc.", "Media plan (formats).", "Demand gen layer + demand capture layer (personal landing page, conversation ads)."],
+      l: "Limina messaging doc lines: who = CISO at a bank, in the way = PII in RAG data, help = redaction inside their VPC, proof = Zurich, RBC, MUFG.",
+      t: [[0, "3 types of ABM"], [2, "Why not native targeting"], [5, "Building the list"], [10, "The messaging doc"], [18, "Measuring"]]
+    },
+    "_UVFFTAkAAo": {
+      s: "What LinkedIn thought leader ads are (boosting a person's post instead of a company page post), why they win, and how to set them up.",
+      k: ["People engage with people more than logos. He sees 3 to 4 times higher engagement than company page ads.", "In his account: thought leader ads hit 5 to 11% click-through vs about 1% for normal ads, with much cheaper clicks and twice the read time.", "Uses: grow the CEO's following, tell the company story, share case studies, boost customer testimonials, amplify your experts.", "You can boost anyone's post (even a customer's) once they approve.", "Setup: Engagement objective, turn off Audience Network, single image or video, bid low, Browse existing content > LinkedIn members.", "Funnel: lead with a strong case study post, retarget with more expert posts, finish with an offer post."],
+      d: ["Pick a strong post.", "Create an Engagement campaign.", "Browse existing content > members.", "Get the person's approval (turn on auto-approve).", "Retarget engagers with the offer post."],
+      l: "Boost Patricia Thaine's (Limina CEO) best posts to the CISO list. This is rewrite 6 in your ads audit.",
+      t: [[0, "What they are"], [4, "The data vs normal ads"], [6, "5 use cases"], [8, "Step-by-step setup"]]
+    },
+    "eFSMGI_UK38": {
+      s: "A founder who got 300+ customers from thought leader ads shows the 2026 setup, his benchmarks, and the golden rule: test posts organically first.",
+      k: ["His normal image ads: about 1% CTR. Thought leader ads: 13%+.", "Only 2 objectives allowed: brand awareness or engagement. He always picks engagement.", "Use permanent location, turn off audience expansion and Audience Network.", "Manual bidding at about 2/3 of the suggested bid saves money.", "Golden rule: only boost posts that already did well organically.", "Edit the post before boosting: add a clear call to action with a link.", "His benchmarks: turn off anything under 10% CTR. Want 10%+ of actions to be landing page clicks.", "Clicks miss most of the impact. Track influenced pipeline in the CRM."],
+      d: ["Post organically.", "Pick the top 2 to 3 posts each month.", "Add a CTA.", "Start with retargeting audiences, then go cold.", "Cut losers fast."],
+      l: "Watch which of Limina's people's posts do well organically, then boost only those.",
+      t: [[3, "Setup"], [8, "Test organically first"], [10, "His benchmarks"]]
+    },
+    "2xfc4FJ7Eww": {
+      s: "Direct mail isn't magic. It warms up the prospect so your follow-up call is not cold.",
+      k: ["Nobody calls you after getting mail. The win is the follow-up: \"Did you get the piece I sent?\"", "Mail works because no one is trying to block it, unlike email filters or LinkedIn limits.", "Step 1: call to confirm the address and that the person still works there.", "Step 2: make it personal: handwritten envelope, real stamp, handwritten card, no brochure.", "Step 3: follow up until you reach the person."],
+      d: ["Confirm the address.", "Send something hand-made.", "Follow up by phone or LinkedIn."],
+      l: "This is exactly how your Limina box worked: Tyler got it, then the LinkedIn message followed.",
+      t: [[0, "Why mail works"], [1, "The 3 steps"]]
+    },
+    "Xqi_2RvU_XM": {
+      s: "A VP of marketing says the gift matters less than the reason behind it. A thoughtful note beats an expensive item.",
+      k: ["Her best campaign: cards with video screens that showed research about the prospect's industry.", "The message and the reason you reached out matter more than the gift.", "Cold gifts to strangers feel pushy. Gifts work best after some connection, or to move a deal forward."],
+      d: ["Connect first (LinkedIn, an event).", "Then send a gift with a clear, personal reason."],
+      l: "Send gifts to accounts already warming up (score 60+), not to cold ones.",
+      t: [[0, "Video card campaign"], [1, "What makes a gift work"]]
+    },
+    "o1vY7U7yjSM": {
+      s: "Scrappy ABM's founder shares hot plays: closed-lost programs, benchmark offers, and gifting to the wider buying committee.",
+      k: ["Closed-lost play: offer a benchmark or audit so prospects tell you their problems, then a 1:1 consult with an expert.", "The same play works for current customers (expansion), pipeline, and website re-engagement.", "Teach people for free until they feel reciprocity.", "Best place for gifting: stalled deals, and multi-threading (reaching more decision makers).", "Example: in a 3-vendor race, a gift to the CFO makes them know you exist."],
+      d: ["Find stalled deals.", "Map who isn't in the meetings yet (CFO, security).", "Send them something useful with a reason."],
+      l: "Stalled Limina deal? Send the CFO or CISO a short \"cost of DIY redaction\" one-pager with a small gift.",
+      t: [[0, "Closed-lost plays"], [2, "Gifting in pipeline"]]
+    },
+    "jukH3pf19vo": {
+      s: "Sendoso's co-founder on how sales and marketing use direct mail and gifting, why it works, and examples he shares.",
+      k: ["Uses: invite target accounts, invite to events, thank webinar attendees, a gift card the morning of a demo so they show up.", "Results he cites from customers: Gong's piñata campaign, Gainsight sending the CEO's book, Guru sending cupcakes.", "Small budget is fine: a $5 coffee card or a $10 dog toy with a handwritten note.", "Why it works: reciprocity, something physical on the desk, and scarcity (few gifts vs thousands of emails).", "ABM is spear fishing, not net fishing. Gifts fit 1:1 pages, small events and sales pods.", "Mail adds to other channels. It doesn't replace them."],
+      d: ["Pick the leaky step (demo no-shows, webinar follow-up).", "Add a small, personal gift there.", "Track the change."],
+      l: "Limina webinar idea: attendees from tier 1 accounts get a thank-you gift plus the recording within 24 hours.",
+      t: [[1, "Use cases"], [3, "Case studies"], [6, "Gifting in ABM"], [10, "Why it works"]]
+    },
+    "DZQ3Dy-fTBs": {
+      s: "Shows how to build hundreds of personal landing pages using Clay (data + AI text) and Webflow (the page template).",
+      k: ["Copy Clay's ABM template table. Create a Webflow collection with custom fields (heading 1, heading 2, subtext).", "Clone your homepage design into the collection template.", "In Clay, each row is a company. AI writes the heading and subtext, optionally from a social signal (what they posted).", "Map Clay columns to Webflow fields. One run creates or updates every page.", "Keep text length fixed so long company names don't break the design.", "Test with 1 row first. He built 171 pages in about 5 minutes after setup.", "The page is step one: use it in emails, LinkedIn ads, even print."],
+      d: ["Template in Clay.", "Collection in Webflow.", "Clone the design.", "AI columns for copy.", "Map and run.", "Use the links in outreach."],
+      l: "This is your Limina ABM page (/limina/abm/?a=manulife) at scale: one template, one page per tier 1 account.",
+      t: [[1, "Webflow collection"], [4, "Clay logic"], [13, "Keep text length fixed"], [25, "Using the pages in outreach"]]
+    },
+    "uWRminjpXsE": {
+      s: "Dave Gerhardt with Casey Patterson, head of ABM at Snowflake (team of 23). ABM starts with sales, isn't just ads, and the number of accounts should come from sales capacity.",
+      k: ["ABM = sales picks the accounts, marketing helps them get in. Success = meetings and deals on that list.", "Influence can't be judged by title. Ask sales who really drives the decision.", "ABM is not \"run ads to a list\".", "Snowflake play: an in-office lab + billboards near the account + a gift + SDR emails. Product users doubled in that account.", "Run 2-week sprints with an end date. Sales doesn't care about evergreen.", "How many accounts? Sales is the bottleneck. If a rep has 100 accounts, target ~10. Snowflake gets meetings in ~4 of 10.", "Low-budget start: 1:1 landing pages, direct mail with a QR, small dinners, customers talking to customers.", "Future: AI removes the clicking, then each buyer gets messages in the channel they prefer."],
+      d: ["Ask how many reps and how many meetings each can handle.", "Work back to the account count.", "Surround a few accounts for 2 weeks.", "Measure the account, not each touch."],
+      l: "Start Limina tier 1 at 10 accounts because the MDR and AEs can only work so many meetings well.",
+      t: [[18, "What ABM is"], [22, "Not just ads"], [30, "The Snowflake play"], [34, "Sprints"], [37, "How many accounts"], [42, "Low-budget start"], [43, "Agentic ABM"]]
+    },
+    "q_PvrQsWu-E": {
+      s: "Leaders from Snowflake, Ramp and Hightouch on what to stop, start and scale in ABM: fewer accounts, test vs control groups, in-person plays, and scrappy starts.",
+      k: ["ABM = bringing sales strategy to life through marketing channels.", "Hightouch proves it with a control group: ABM accounts convert to first opportunity 32% more often.", "Account picking is a CRO-level job. Sales knows things data can't (\"they just signed a 3-year deal elsewhere\").", "Stop: too many accounts. Hightouch caps an AE at 20. Snowflake major-account marketers handle ~20.", "Ads to tiny lists burn out fast: change creative every 2 to 3 weeks.", "In-person works best mid-funnel, with people you already know: sales-led dinners, a coffee truck by 4 bank offices, suites.", "Scrappy starts: direct mail with an offer, lunch-and-learn at their office, a $0 1:1 landing page sales sends.", "Measure lift vs control, stage progression, and deal stories, not last-touch fights."],
+      d: ["Pick a small list with sales.", "Hold some accounts back as control.", "Run plays.", "Compare conversion and progression."],
+      l: "Pitch to Tyler: start with 10 accounts + a 10-account control group, so we can prove ABM's lift in 2 quarters.",
+      t: [[7, "Defining ABM"], [9, "Control group results"], [14, "What to stop"], [19, "In-person plays"], [25, "Budget"], [29, "KPIs"], [39, "Scrappy plays"]]
+    },
+    "QTg-0Uz7uUM": {
+      s: "Two event leaders (Qualtrics, Iterable) on B2B events that make pipeline: clear goals, the right people, creative booths, and fast follow-up.",
+      k: ["Biggest mistakes: going to every event without a plan, and not using partners for joint events.", "Why events: trust matters more in the AI era. Measure revenue, the right target accounts there, and retention.", "A good event does 3 things: educate, entertain, inspire.", "Piggyback: skip the big booth, host a dinner near a show your buyers already attend.", "Booth ideas: tarot readings, a pancake artist, cold brew, real prizes. No junk swag.", "Pre-event outreach matters more than the booth.", "Follow-up: put people into nurture by role, make a unique offer, and have one owner who chases sales.", "Flagship conference only when you can fill 500 seats. \"No empty seats\". Small venue, packed room."],
+      d: ["Set the goal first.", "Pick the people.", "Pre-event outreach.", "An experience, not stuff.", "Follow up within days with one owner."],
+      l: "For IAPP or RSAC: no big booth at first. Host a tier 1 dinner nearby and book meetings before the show.",
+      t: [[8, "Biggest mistakes"], [10, "Why do events"], [19, "Follow-up"], [22, "Standing out at a booth"], [33, "Measuring events"], [36, "Your event vs sponsoring"]]
+    },
+    "Pp5yp8GV6P4": {
+      s: "Five B2B marketers each share their best webinar play: a survey after sign-up, a compounding series, 24-hour follow-up, a conference-style series, and influencer guests.",
+      k: ["Logan: replace the thank-you page with a 5 to 8 question survey. Over 90% complete it. Qualified people get an offer and book calls before the webinar. 5x conversions.", "Mary: one registration covers a whole series, hosted on your own site. 900 registrants, 2 hours watched each, 25% of revenue touched.", "Caroline: a famous guest (a former FEMA head) + sales picks up leads same or next day, with a ranked hot list. About $1M pipeline in a week.", "Christina: run a webinar series like a conference (keynotes, product news, panels) spread over weeks.", "Josh: guests with first-party research and their own audience (Kyle Poyar). 900 registered, 250 live.", "Owned channels (email, organic social) usually beat paid. LinkedIn beat Google for registrants."],
+      d: ["Survey on the thank-you page.", "A guest with a real point of view.", "Hand sales a ranked list within 24 hours.", "Turn the recording into clips, posts and a blog."],
+      l: "Limina webinar: a privacy expert guest on \"Where PII leaks in RAG pipelines\" + a 5-question survey after sign-up + MDR follow-up in 24 hours.",
+      t: [[6, "The survey after sign-up"], [14, "The webinar series"], [21, "$1M pipeline follow-up"], [28, "Conference-style series"], [34, "Influencer guests"]]
+    },
+    "mnJL8lWJS5Y": {
+      s: "Four marketers share email plays that work in B2B now: a personal year-in-review, a real newsletter, newsjacking with AI, and newsletters for long sales cycles.",
+      k: ["Ben (Quo): a Spotify Wrapped-style email with each customer's real stats, charts and a shareable page. Done by 1 to 2 people.", "Dana (Knack): a real newsletter, same day and time every week, useful content including other people's work. Measure replies, not opens.", "Her operating model: one owner, rotating writers, a fixed template, work 2 to 3 weeks ahead.", "Tyler: newsjacking. Google Alerts feed an AI that drafts email angles; a human checks and sends within an hour. One email got a 67% open rate and 4% replies.", "Kimmy: a weekly nurture newsletter plus one conversion email. Fewer, better emails cut unsubscribes ~20% and lifted clicks ~40%.", "Reply-able emails (not no-reply@) build trust."],
+      d: ["Pick a day and time.", "One owner, rotating writers.", "Set up alerts for your industry news.", "Send fast and relevant.", "Count replies."],
+      l: "Limina newsjacking: when a regulator updates AI or privacy rules, email the privacy list within hours on what it means for their AI data.",
+      t: [[5, "Year-in-review email"], [16, "Real newsletters"], [27, "Newsjacking"], [40, "Newsletters for long cycles"]]
+    }
+  };
+  const nb = document.createElement("div");
+  nb.className = "vnote"; nb.id = "vnote"; nb.hidden = true;
+  nb.innerHTML = `<div class="vnote-bg" data-close></div><div class="vnote-box" role="dialog" aria-modal="true" aria-labelledby="vnote-t"><button class="vnote-x" data-close aria-label="Close">×</button><div id="vnote-c"></div></div>`;
+  document.body.appendChild(nb);
+  function openNote(id) {
+    const n = NOTES[id], v = V.flatMap(g => g[1]).find(x => x[0] === id);
+    if (!n || !v) return;
+    const yt = m => `https://www.youtube.com/watch?v=${id}&t=${m * 60}s`;
+    $("vnote-c").innerHTML = `<div class="vnote-k">${v[2]} · ${v[3]}</div><h3 id="vnote-t">${v[1]}</h3><p class="vnote-s">${n.s}</p><h4>Key ideas</h4><ul>${n.k.map(x => `<li>${x}</li>`).join("")}</ul><h4>Do it like this</h4><ol>${n.d.map(x => `<li>${x}</li>`).join("")}</ol><div class="say"><b>Use it at Limina:</b> ${n.l}</div><h4>Jump to</h4><div class="vnote-ts">${n.t.map(t => `<a href="${yt(t[0])}" target="_blank" rel="noopener">${t[0]}:00 · ${t[1]}</a>`).join("")}</div>`;
+    nb.hidden = false; document.body.style.overflow = "hidden"; nb.querySelector(".vnote-x").focus();
+  }
+  function closeNote() { nb.hidden = true; document.body.style.overflow = ""; }
+  nb.querySelectorAll("[data-close]").forEach(e => e.onclick = closeNote);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !nb.hidden) closeNote(); });
+  $("vids").querySelectorAll("[data-n]").forEach(b => b.onclick = () => openNote(b.dataset.n));
   vprog();
 
   // ---------- 37 plan ----------
